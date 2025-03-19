@@ -15,12 +15,16 @@ outBox.innerHTML = myLocInfo;
 //==USING THE QUERY STRING FROM .search PROGRAMATICALLY==
 //Create a variable to hold the search property query string.
 var searchString = location.search;
-
+let rightcode= document.getElementById("rightcode");
+let leftcode= document.getElementById("leftcode");
 //Use logic (a switch for multiple cases) to provide content based on the query string.
 //NOTE: the string includes the ? so you need to include that in your check.
 if( searchString === "?leftcode" ){
-	outBox.innerHTML = "<p>You used the LEFT QR code!</p>";
+	rightcode.style.display = "none" ;
+	// outBox.innerHTML = "<p>You used the LEFT QR code!</p>";
+
 	
 }else if ( searchString === "?rightcode" ){
-	outBox.innerHTML = "<p>You used the RIGHT QR code!</p>";
+	// outBox.innerHTML = "<p>You used the RIGHT QR code!</p>";
+	leftcode.style.display = "none" ;
 }
