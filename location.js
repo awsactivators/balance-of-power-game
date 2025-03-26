@@ -29,7 +29,7 @@ let card10= document.getElementById("card10");
 //Use logic (a switch for multiple cases) to provide content based on the query string.
 //NOTE: the string includes the ? so you need to include that in your check.
 if( searchString === "?card1" ){
-	card.style.display = "none" ;
+	
 	card1.style.display = "block" ;
 	
 	// outBox.innerHTML = "<p>You used the LEFT QR code!</p>";
@@ -37,29 +37,27 @@ if( searchString === "?card1" ){
 	
 }else if ( searchString === "?card2" ){
 	// outBox.innerHTML = "<p>You used the RIGHT QR code!</p>";
-	card.style.display = "none" ;
+	
 	card2.style.display = "block" ;
 	
 }else if ( searchString === "?card3" ){
 	// outBox.innerHTML = "<p>You used the RIGHT QR code!</p>";
-	card.style.display = "none" ;
+	
 	card3.style.display = "block" ;
 	
 }else if ( searchString === "?card4" ){
 	// outBox.innerHTML = "<p>You used the RIGHT QR code!</p>";
-	card.style.display = "none" ;
+
 	card4.style.display = "block" ;	
 	
 }
 else if ( searchString === "?card5" ){
 	// outBox.innerHTML = "<p>You used the RIGHT QR code!</p>";
-    	card.style.display = "none" ;
 	card5.style.display = "block" ;
     
 }
 else if ( searchString === "?card6" ){
-	
-	card.style.display = "none" ;
+
 	card6.style.display = "block" ;
 	
 
@@ -67,7 +65,6 @@ else if ( searchString === "?card6" ){
 
 else if ( searchString === "?card7" ){
 	
-	card.style.display = "none" ;
 	card7.style.display = "block" ;
 	
 
@@ -75,14 +72,13 @@ else if ( searchString === "?card7" ){
 
 else if ( searchString === "?card8" ){
 
-    card.style.display = "none" ;
+   
     card8.style.display = "block" ;
    
 }
 
 else if ( searchString === "?card9" ){
 	
-     card.style.display = "none" ;
 	card9.style.display = "block" ;
    
 
@@ -90,7 +86,6 @@ else if ( searchString === "?card9" ){
 
 else if ( searchString === "?card10" ){
 	
-	card.style.display = "none" ;
 	card10.style.display = "block" ;
 	
 
