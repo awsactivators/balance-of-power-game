@@ -1,0 +1,26 @@
+
+/* Container */
+.container {
+    text-align: center;
+    max-width: 400px;
+}
+
+/* Title */
+.title {
+    font-size: 2rem;
+    letter-spacing: -0.05em;
+    text-shadow: 1px 1px 4px rgba(145, 72, 39, 0.5);
+    margin-bottom: 2rem;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.action-item p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/solution-cover.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="story-cover">
+        <div class="story-cover-child"></div>
+        <div class="frame-parent">
+           
+                <!-- Intro Image and Text Content -->
+                <div class="intro-image-parent">
+                    <div class="intro-image"></div>
+                    <div class="container">
+                        <h1>Full Audio: CHAPTER</h1>
+                        <p>This is the text of the story.</p>
+                        <p>Here is another sentence. It’s not another line. The text div is just this big.</p>
+                        <p class="pthis-is-the">Listen to the complete story.</p>
+                    </div>
+
+                    <!-- Controls: Rewind, Pause, Forward -->
+                    <div class="frame-div">
+                        <div class="mdirewind-10-parent">
+                            <img class="mdirewind-10-icon" alt="Rewind" src="img/rewind-icon.svg">
+                            <div class="rewind">REWIND</div>
+                        </div>
+                        <img class="pause-icon" alt="Pause" src="img/pause.svg" id="pauseIcon">
+
+                        <div class="mdifast-forward-10-parent">
+                            <img class="mdifast-forward-10-icon" alt="Forward" src="img/forward-icon.svg">
+                            <div class="rewind">FORWARD</div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+
+                </div>
+                <!-- Continue Button -->
+                <div class="continue-parent">
+                    <div class="continue">CONTINUE</div>
+                    <img class="forward-icon" alt="Forward" src="img/forward.svg" id="skipForwardIcon">
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Pause Icon Event Listener
+            var pauseIcon = document.getElementById("pauseIcon");
+            if (pauseIcon) {
+                pauseIcon.addEventListener("click", function (e) {
+                    // Add your code here for pause functionality
+                });
+            }
+
+            // Skip Forward Icon Event Listener
+            var skipForwardIcon = document.getElementById("skipForwardIcon");
+            if (skipForwardIcon) {
+                skipForwardIcon.addEventListener("click", function (e) {
+                    // Add your code here for skip forward functionality
+                });
+            }
+        </script>
+</body>
+
+</html>

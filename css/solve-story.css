@@ -1,0 +1,50 @@
+
+.to-solve-this {
+    align-self: stretch;
+    position: relative;
+    font-size: 16px;
+    letter-spacing: -0.05em;
+    display: inline-block;
+    color: #ccccbb;
+    height: 45px;
+    flex-shrink: 0;
+}
+
+.button-parent {
+    width: 301px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    color: #ccccbb;
+}
+.frame-parent {
+    position: absolute;
+    top: 152px;
+    left: calc(50% - 158.5px);
+    width: 318px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+.button-green {
+    position:relative;
+
+    box-shadow: 0px 0px 5px #848e51;
+    border-radius: 15px;
+    background-color: #848e51;
+    width: 229px;
+    height: 43px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #e5e5d5;
+}
+
+
