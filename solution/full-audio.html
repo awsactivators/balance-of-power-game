@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>Balance of Power - Full Chapter Audio</title>
+</head>
+<body>
+  <div class="container">
+    <h2 id="audioTitle">Full Audio: CHAPTER</h2>
+
+    <div class="card-grid" id="cardGrid">
+      <!-- Cards will go here -->
+    </div>
+
+    <p id="audioPrompt">You found all the clues in this chapter! When you're ready, click continue to unlock the full story.</p>
+
+
+    <div id="chapterImageContainer" style="margin: 1em 0;"></div>
+
+    <div class="audio-controls">
+      <button onclick="rewind()">⟲<br><small>10<br>REWIND</small></button>
+      <button onclick="togglePlay()">⏯</button>
+      <button onclick="forward()">⟳<br><small>10<br>FORWARD</small></button>
+    </div>
+
+    <button class="continue-button" onclick="handleContinue()">CONTINUE</button>
+
+
+    <audio id="chapterAudio"></audio>
+  </div>
+
+  <script src="./js/gameData.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

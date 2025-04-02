@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>Balance of Power - Story Solved</title>
+</head>
+<body>
+  <div class="container">
+    <h2 id="mysterySolved">Mystery Solved!</h2>
+
+    <p>You uncovered the full story. These were the final clues:</p>
+
+    <div class="card-grid" id="finalCards">
+      <!-- Final chapter images will be displayed here -->
+    </div>
+
+    <p>Listen to the full story below:</p>
+
+    <div class="audio-controls">
+      <button onclick="rewind()">⟲<br><small>10<br>REWIND</small></button>
+      <button onclick="togglePlay()">⏯</button>
+      <button onclick="forward()">⟳<br><small>10<br>FORWARD</small></button>
+    </div>
+
+    <audio id="finalAudio"></audio>
+
+    <button class="continue-button" onclick="restartGame()">🔁 RESTART GAME</button>
+  </div>
+
+  <script src="./js/gameData.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

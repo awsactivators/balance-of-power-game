@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>Balance of Power - Enter Chapter</title>
+</head>
+<body>
+  <div class="container">
+    <span id="chapterError" style="color: red; display: block; margin-top: 0.5em;"></span>
+
+    <p>Enter the card code for the chapter you wish to solve:</p>
+    <input type="text" id="chapterInput" maxlength="5" placeholder="e.g., 1000"/>
+    <button onclick="validateChapter()">CONTINUE</button>
+
+  </div>
+
+  <script src="./js/gameData.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>Balance of Power - Solve Full Story</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Solve: FULL STORY</h2>
+    <p id="storyFeedback" style="color: red; margin-top: 1em;"></p>
+
+    <p>To solve this story, enter in the correct order, the codes from the chapter cards:</p>
+
+    <input type="text" id="story1" maxlength="5" placeholder="Chapter 1 Card Code" />
+    <input type="text" id="story2" maxlength="5" placeholder="Chapter 2 Card Code" />
+    <input type="text" id="story3" maxlength="5" placeholder="Chapter 3 Card Code" />
+
+    <button onclick="solveStory()">SOLVE STORY</button>
+    <p id="storyFeedback" style="margin-top: 1em;"></p>
+  </div>
+
+  <script src="./js/gameData.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>
