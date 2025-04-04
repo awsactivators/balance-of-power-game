@@ -27,14 +27,14 @@ const gameData = {
     }
   },
   cards: {
-    "1001": { id: "1001", chapter: "1000", audio: "./audio/audio1.mp3" },
-    "1002": { id: "1002", chapter: "1000", audio: "./audio/audio1.mp3" },
-    "1003": { id: "1003", chapter: "1000", audio: "./audio/audio1.mp3" },
-    "2001": { id: "2001", chapter: "2000", audio: "./audio/audio1.mp3" },
-    "2002": { id: "2002", chapter: "2000", audio: "./audio/audio1.mp3" },
-    "2003": { id: "2003", chapter: "2000", audio: "./audio/audio1.mp3" },
-    "3001": { id: "3001", chapter: "3000", audio: "./audio/audio1.mp3" },
-    "3002": { id: "3002", chapter: "3000", audio: "./audio/audio1.mp3" },
-    "3003": { id: "3003", chapter: "3000", audio: "./audio/audio1.mp3" }
+    "1001": { id: "1001", chapter: "1000", audio: "./audio/audio1.mp3", image: "./images/ch1-3841-uniform-navy-pilot.jpg" },
+    "1002": { id: "1002", chapter: "1000", audio: "./audio/audio1.mp3", image: "./images/ch1-3841-uniform-navy-pilot.jpg" },
+    "1003": { id: "1003", chapter: "1000", audio: "./audio/audio1.mp3", image: "./images/ch1-3841-uniform-navy-pilot.jpg" },
+    "2001": { id: "2001", chapter: "2000", audio: "./audio/audio1.mp3", image: "./images/ch1-3841-uniform-navy-pilot.jpg" },
+    "2002": { id: "2002", chapter: "2000", audio: "./audio/audio1.mp3", image: "./images/ch1-3841-uniform-navy-pilot.jpg" },
+    "2003": { id: "2003", chapter: "2000", audio: "./audio/audio1.mp3", image: "./images/ch1-3841-uniform-navy-pilot.jpg" },
+    "3001": { id: "3001", chapter: "3000", audio: "./audio/audio1.mp3", image: "./images/ch1-3841-uniform-navy-pilot.jpg" },
+    "3002": { id: "3002", chapter: "3000", audio: "./audio/audio1.mp3", image: "./images/ch1-3841-uniform-navy-pilot.jpg" },
+    "3003": { id: "3003", chapter: "3000", audio: "./audio/audio1.mp3", image: "./images/ch1-3841-uniform-navy-pilot.jpg" }
   }
 };

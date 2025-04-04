@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="./css/style.css"/>
   <title>Balance of Power - Solve Chapter</title>
 </head>
 <body>
   <div class="container">
     <h2 id="chapterTitle">Solve: CHAPTER</h2>
-    <p id="feedback" style="color: red; margin-top: 1em;"></p>
+
+    <div id="chapterImageContainer" class="image-container"></div>
 
     <p>To solve this chapter, enter in the order you wish, the codes from the cards:</p>
-    <div id="chapterImageContainer" style="margin: 1em 0;"></div>
-
-    <input type="text" id="card1" maxlength="4" placeholder="1000"/>
-    <input type="text" id="card2" maxlength="4" placeholder="2000"/>
-    <input type="text" id="card3" maxlength="4" placeholder="3000"/>
+    <p id="feedback" class="error-text"></p>
+    <input type="text" id="card1" maxlength="4" placeholder="1001"/>
+    <input type="text" id="card2" maxlength="4" placeholder="2002"/>
+    <input type="text" id="card3" maxlength="4" placeholder="3003"/>
 
     <button onclick="solveChapter()">SOLVE</button>
-    <p id="feedback" style="margin-top: 1em;"></p>
+    <p id="feedback"></p>
   </div>
 
   <script src="./js/gameData.js"></script>

@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="./css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <title>Balance of Power - Full Chapter Audio</title>
 </head>
 <body>
@@ -11,21 +12,25 @@
     <h2 id="audioTitle">Full Audio: CHAPTER</h2>
 
     <div class="card-grid" id="cardGrid">
+      <div id="chapterImageContainer" class="card"></div>
       <!-- Cards will go here -->
     </div>
 
-    <p id="audioPrompt">You found all the clues in this chapter! When you're ready, click continue to unlock the full story.</p>
-
-
-    <div id="chapterImageContainer" style="margin: 1em 0;"></div>
+    <p id="audioPrompt">Congratulations, you found all the clues. Listen to the full chapter, continue when ready.</p>
 
     <div class="audio-controls">
-      <button onclick="rewind()">⟲<br><small>10<br>REWIND</small></button>
-      <button onclick="togglePlay()">⏯</button>
-      <button onclick="forward()">⟳<br><small>10<br>FORWARD</small></button>
+      <button onclick="rewind()" class="control-btns" id="rewind"><i class="fa-solid fa-rotate-left"></i>10</button>
+      <button onclick="togglePlay()" id="play" class="control-btns play-pause"><i class="fa-solid fa-play"></i></button>
+      <button onclick="togglePlay()" style="display: none;" id="pause" class="control-btns play-pause"><i class="fa-solid fa-pause"></i></button>
+      <button onclick="forward()" class="control-btns" id="forward"><i class="fa-solid fa-rotate-right"></i>10</button>
     </div>
 
-    <button class="continue-button" onclick="handleContinue()">CONTINUE</button>
+    <div class="continue-container">
+      <div class="continue-btn">CONTINUE</div>
+      <button class="continue-button" onclick="handleContinue()">
+        <i class="fa-solid fa-forward-step"></i>
+      </button>
+    </div>
 
 
     <audio id="chapterAudio"></audio>

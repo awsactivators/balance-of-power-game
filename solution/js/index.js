@@ -55,10 +55,7 @@ if (solveButton) {
       const img = document.createElement("img");
       img.src = chapter.image;
       img.alt = chapter.title;
-      img.style.width = "100%";
-      img.style.maxWidth = "300px";
-      img.style.borderRadius = "12px";
-      img.style.marginTop = "10px";
+      img.className = "img-rounded";
       imageContainer.appendChild(img);
     }
   }
@@ -167,10 +164,7 @@ if (audioEl && audioGrid) {
     const img = document.createElement("img");
     img.src = chapterAudio.image;
     img.alt = chapterAudio.title;
-    img.style.width = "100%";
-    img.style.maxWidth = "300px";
-    img.style.borderRadius = "12px";
-    img.style.marginTop = "10px";
+    img.className = "card-img";
     imageContainer.appendChild(img);
   }
 
@@ -180,15 +174,32 @@ if (audioEl && audioGrid) {
   // Display all card codes for that chapter
   chapterAudio.cards.forEach(code => {
     const card = document.createElement("div");
+    const cardData = gameData.cards[code];
+    const img = document.createElement("img");
+
     card.className = "card";
-    card.textContent = code;
+
+    img.src = cardData.image;
+    img.alt = `Card ${code}`;
+    img.className = "card-img";
+
+    card.appendChild(img);
     audioGrid.appendChild(card);
   });
 
   // Play/pause, rewind, forward functionality
   window.togglePlay = function () {
-    if (audioEl.paused) audioEl.play();
-    else audioEl.pause();
+    const play = document.getElementById("play");
+    const pause = document.getElementById("pause");
+    if (audioEl.paused) {
+      play.style.display = "none";
+      pause.style.display = "block";
+      audioEl.play();
+    } else {
+      play.style.display = "block";
+      pause.style.display = "none";
+      audioEl.pause();
+    } 
   };
 
   window.rewind = function () {
@@ -295,14 +306,11 @@ if (finalAudio && finalCardsContainer) {
     const img = document.createElement("img");
     img.src = chapter.image;
     img.alt = chapter.title;
-    img.style.width = "100%";
-    img.style.borderRadius = "10px";
+    img.className = "img-rounded";
   
     const label = document.createElement("p");
     label.textContent = `${chapter.title}: ${chapter.name}`;
-    label.style.marginTop = "0.5em";
-    label.style.fontWeight = "bold";
-    label.style.textAlign = "center";
+    label.className = "label-bold";
   
     wrapper.appendChild(img);
     wrapper.appendChild(label);
@@ -316,9 +324,15 @@ if (finalAudio && finalCardsContainer) {
 
   // Playback controls
   window.togglePlay = function () {
+    const play = document.getElementById("play");
+    const pause = document.getElementById("pause");
     if (finalAudio.paused){
+      play.style.display = "none";
+      pause.style.display = "block";
       finalAudio.play();
     } else {
+      play.style.display = "block";
+      pause.style.display = "none";
       finalAudio.pause();
     } 
   };
