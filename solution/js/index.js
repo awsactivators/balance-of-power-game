@@ -9,6 +9,12 @@ function validateChapter() {
   const chapterCode = chapterInput.value.trim(); 
   const chapter = gameData.chapters[chapterCode]; 
 
+  // If the input is empty, show an error message
+  if (chapterCode === "") {
+    errorSpan.textContent = "Kindly input a code.";
+    return;
+  }
+
   if (chapter) {
     // If the chapter exists, store it in session and move to solve page
     sessionStorage.setItem("currentChapter", chapterCode);
@@ -67,34 +73,59 @@ if (solveButton) {
       document.getElementById("card2").value.trim(),
       document.getElementById("card3").value.trim()
     ];
-
-    // Filter cards that belong to this chapter
-    const validCards = inputCodes.filter(code => {
-      const card = gameData.cards[code];
-      return card && card.chapter === chapterCode;
-    });
-
+  
+    // Save to sessionStorage for result page
     sessionStorage.setItem("lastAttempt", JSON.stringify(inputCodes));
-
-    if (validCards.length === 0) {
-      feedback.textContent = "None of the cards belong to this chapter.";
-    } else if (validCards.length < 3) {
-      feedback.textContent = `Only ${validCards.length} card(s) belong to this chapter. Try again.`;
-    } else {
-      // Check if the cards are in the correct order
-      const isCorrectOrder = chapter.cards.every((code, index) => code === inputCodes[index]);
-      if (isCorrectOrder) {
-        sessionStorage.setItem(`solved_${chapterCode}`, "true");
-        sessionStorage.setItem(`chapterAudio_${chapterCode}`, chapter.audio);
-        window.location.href = "full-audio.html";
+  
+    // Check for empty inputs
+    if (inputCodes.some(code => code === "")) {
+      feedback.textContent = "Please provide all three card codes.";
+      return;
+    }
+  
+    // Validate codes against gameData.cards
+    const validInputCards = inputCodes.map(code => gameData.cards[code] || null);
+    const totalValid = validInputCards.filter(Boolean).length;
+  
+    if (totalValid === 0) {
+      feedback.textContent = "None of the codes are valid card codes.";
+      return;
+    } else if (totalValid < 3) {
+      feedback.textContent = "Some of the codes are not valid card codes.";
+      return;
+    }
+  
+    // Check how many belong to the current chapter
+    const validForChapter = validInputCards.filter(card => card.chapter === chapterCode);
+  
+    if (validForChapter.length < 3) {
+      if (validForChapter.length === 0) {
+        feedback.textContent = "None of the cards belong to this chapter.";
       } else {
-        feedback.textContent = "All cards belong to the chapter, but the order is incorrect.";
+        feedback.textContent = "Some of the cards do not belong to this chapter.";
       }
+      return;
+    }
+  
+    // Check for duplicates
+    const uniqueCodes = new Set(inputCodes);
+    if (uniqueCodes.size < inputCodes.length) {
+      feedback.textContent = "Duplicate code entered. Each card code must be unique.";
+      return;
+    }
+  
+    // Check if order is correct
+    const isCorrectOrder = chapter.cards.every((code, index) => code === inputCodes[index]);
+  
+    if (isCorrectOrder) {
+      sessionStorage.setItem(`solved_${chapterCode}`, "true");
+      sessionStorage.setItem(`chapterAudio_${chapterCode}`, chapter.audio);
+      window.location.href = "full-audio.html";
+    } else {
+      feedback.textContent = "All cards belong to this chapter, but not in the correct order.";
     }
   };
 }
-
-
 
 
 
@@ -251,34 +282,47 @@ if (storyInput) {
   
     const feedback = document.getElementById("storyFeedback");
   
+    // Check for empty input
     if (codes.some(code => code === "")) {
       feedback.textContent = "Please enter all three chapter codes.";
       return;
     }
   
-    const chaptersExist = codes.every(code => gameData.chapters[code]);
-    if (!chaptersExist) {
-      feedback.textContent = "One or more chapter codes are invalid.";
+    // Validate if chapter exist
+    const validChapters = codes.map(code => gameData.chapters[code] || null);
+    const totalValid = validChapters.filter(Boolean).length;
+  
+    if (totalValid === 0) {
+      feedback.textContent = "None of the codes are valid chapter codes.";
+      return;
+    } else if (totalValid < 3) {
+      feedback.textContent = "Some of the codes are not valid chapter codes.";
       return;
     }
   
-    const correctOrder = ["1000", "2000", "3000"];
+    // Check for duplicates
+    const uniqueCodes = new Set(codes);
+    if (uniqueCodes.size < codes.length) {
+      feedback.textContent = "Duplicate code entered. Each chapter code must be unique.";
+      return;
+    }
   
-    if (codes.join() === correctOrder.join()) {
-      // Store chapter codes using correct key
+    // Check for correct chapter set
+    const requiredOrder = ["1000", "2000", "3000"];
+    const allChaptersIncluded = requiredOrder.every(ch => codes.includes(ch));
+  
+    if (codes.join() === requiredOrder.join()) {
+      // Correct order, save and redirect
       sessionStorage.setItem("storySolved", "true");
       sessionStorage.setItem("storyChapters", JSON.stringify(codes));
       window.location.href = "final-success.html";
-    } else if (correctOrder.every(ch => codes.includes(ch))) {
+    } else if (allChaptersIncluded) {
       feedback.textContent = "The chapter codes are valid but not in the correct order.";
     } else {
-      feedback.textContent = "The chapter codes entered do not match the expected ones.";
+      feedback.textContent = "The chapter codes entered do not match the required chapters.";
     }
-  };
-  
+  };  
 }
-
-
 
 
 
@@ -317,7 +361,7 @@ if (finalAudio && finalCardsContainer) {
     finalCardsContainer.appendChild(wrapper);
   });  
 
-  mysterySolved.textContent = "Mystery Solved!! Balance of Power"
+  mysterySolved.textContent = "Balance of Power"
 
   // Load the combined final audio file
   finalAudio.src = gameData.finalAudio;

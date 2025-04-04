@@ -13,10 +13,10 @@
     <div id="chapterImageContainer" class="image-container"></div>
 
     <p>To solve this chapter, enter in the order you wish, the codes from the cards:</p>
-    <p id="feedback" class="error-text"></p>
-    <input type="text" id="card1" maxlength="4" placeholder="1001"/>
-    <input type="text" id="card2" maxlength="4" placeholder="2002"/>
-    <input type="text" id="card3" maxlength="4" placeholder="3003"/>
+    <p id="feedback" class="error-text" role="alert" aria-live="polite"></p>
+    <input type="text" id="card1" aria-describedby="feedback" maxlength="4" placeholder="1001"/>
+    <input type="text" id="card2" aria-describedby="feedback" maxlength="4" placeholder="2002"/>
+    <input type="text" id="card3" aria-describedby="feedback" maxlength="4" placeholder="3003"/>
 
     <button onclick="solveChapter()">SOLVE</button>
     <p id="feedback"></p>
