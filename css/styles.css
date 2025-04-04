@@ -8,6 +8,13 @@ body{
 .card{
     display: none;
 }
+.organge {
+color: #bf5525;
+}
+h1, h2{
+    text-align: center;
+    margin: auto;
+}
 h1{
     font-size: 24px;
     font-weight: bold;
@@ -33,10 +40,11 @@ p{   margin: 0;
 
 
 /* Controls: Rewind, Pause, Forward */
-.frame-div {
+.audioControls {
+    margin: auto;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: flex-center;
     justify-content: center;
     gap: 13px;
     color: #ccccbb;
@@ -53,10 +61,13 @@ p{   margin: 0;
 }
 
 .continue-parent {
+    margin: 0 0 0 auto;
+    color: #fff;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     gap: 10px;
+    text-decoration: none;
 }
 
 .continue {
@@ -158,6 +169,15 @@ p{   margin: 0;
     gap: 37px;
 }
 
+.image {
+    width: 100%;
+    height: 339px;
+    border-radius: 10px;
+    background-color: #d3d3d3;
+    border: 5px solid rgba(191, 85, 37, 0.8);
+    box-sizing: border-box;
+    overflow: hidden;
+}
 .solution-correct-frame{
     position: relative;
     margin-top:66px ;
@@ -167,4 +187,60 @@ p{   margin: 0;
     align-items: flex-end;
     justify-content: flex-start;
     gap: 127px;
+}
+
+
+.custom-audio-player {
+    margin: auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+} 
+
+ button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+img {
+    width: 70px; /* Adjust icon size */
+}
+
+/* #progressBar {
+    width: 100%;
+    cursor: pointer;
+} */
+audio {
+    display: none;
+}
+.play{
+    color: aliceblue;
+}
+
+.audio-play-frame{
+    margin-top:148px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.play-area-frame{
+    margin-top: 122px; ;
+    text-align: center;
+    max-width: 400px;
+}
+/* Actions */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.action-item p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
 }

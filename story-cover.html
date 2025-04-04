@@ -16,48 +16,44 @@
             <div class="frame-group">
                 <!-- Intro Image and Text Content -->
                 <div class="intro-image-parent">
-                    <div class="intro-image"></div>
+                    <img class="image" alt="Introduction Image" src="img/intro-image.jpg">
+
                     <div class="container">
                         <h1>Full Audio: CHAPTER</h1>
                         <p>This is the text of the story.</p>
                         <p>Here is another sentence. It’s not another line. The text div is just this big.</p>
-                        <p class="pthis-is-the">Listen to the complete story.</p>
+                        <p>Listen to the complete story.</p>
                     </div>
 
                     <!-- Play Button -->
-                    <div class="button-play-parent">
-                        <img class="play-icon" alt="Play" src="img/button-play.svg" id="buttonPlay">
+                  <button class="custom-audio-player" id="playPauseBtn">
+                        <br><img id="playPauseIcon" src="img/button-play.svg" alt="Play">
                         <div class="play">PLAY</div>
-                    </div>
+                    </button>
+                  
+
                 </div>
 
-                
             </div>
             <!-- Continue Button -->
-            <div class="continue-parent">
+            <div>
+                <!-- Audio Element (Hidden) -->
+                <audio id="myAudio">
+                    <source src="gangbusters.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <!--  endContinue Button -->
+
+            <a href="play-area.html" class="continue-parent">
                 <div class="continue">CONTINUE</div>
                 <img class="forward-icon" alt="Forward" src="img/forward.svg" id="skipForwardIcon">
-            </div>
+            </a>
         </div>
     </div>
 
-    <script>
-    	// Pause Icon Event Listener
-    	var pauseIcon = document.getElementById("pauseIcon");
-    	if (pauseIcon) {
-        	pauseIcon.addEventListener("click", function (e) {
-        	  	// Add your code here for pause functionality
-        	});
-    	}
-
-    	// Skip Forward Icon Event Listener
-    	var skipForwardIcon = document.getElementById("skipForwardIcon");
-    	if (skipForwardIcon) {
-        	skipForwardIcon.addEventListener("click", function (e) {
-        	  	// Add your code here for skip forward functionality
-        	});
-    	}
-  	</script>
+   
+    </div>
+    <script src="javascript/audio.js"></script>
 </body>
 
 </html>

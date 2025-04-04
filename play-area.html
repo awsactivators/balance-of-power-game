@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/play-area.css">
-    <title>Interactive Story</title>
+    <script src="camera.js"></script>
+    <title>Play Area</title>
 </head>
 
 <body>
 
-    <section class="container">
+    <section class="play-area-frame">
         <h1 class="title">&lt;h1&gt;TITLE&lt;/h1&gt;</h1>
 
         <div class="actions">
@@ -22,7 +23,9 @@
             
             <div class="action-item">
                 <p>Click here to solve a chapter:</p>
-                <button class="btn btn-orange">SOLVE CHAPTER</button>
+                <button id="startCamera" class="btn btn-orange" >SOLVE CHAPTER</button>
+                <!-- <video id="videoElement" autoplay></video> -->
+                <!-- <button class="btn btn-orange">SOLVE CHAPTER</button> -->
             </div>
 
             <div class="action-item">
