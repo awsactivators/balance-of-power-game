@@ -120,53 +120,11 @@ if (solveButton) {
     if (isCorrectOrder) {
       sessionStorage.setItem(`solved_${chapterCode}`, "true");
       sessionStorage.setItem(`chapterAudio_${chapterCode}`, chapter.audio);
-      window.location.href = "full-audio.html";
+      window.location.href = "chapter-audio.html";
     } else {
       feedback.textContent = "All cards belong to this chapter, but not in the correct order.";
     }
   };
-}
-
-
-
-// CHAPTER RESULT PAGE
-
-const resultContainer = document.getElementById("resultCards");
-if (resultContainer) {
-  const chapterCodeResult = sessionStorage.getItem("currentChapter");
-  const chapterResult = gameData.chapters[chapterCodeResult];
-  const resultCards = JSON.parse(sessionStorage.getItem("lastAttempt")) || [];
-
-  // Update the result page title
-  if (document.getElementById("resultTitle")) {
-    document.getElementById("resultTitle").textContent = chapterResult?.title || "CHAPTER";
-  }
-
-  let correctCount = 0;
-
-  // Display card attempts and count how many are correct
-  resultCards.forEach(code => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    if (gameData.cards[code] && gameData.cards[code].chapter === chapterCodeResult) {
-      card.style.border = "2px solid #FF7C4C";
-      correctCount++;
-    }
-
-    card.textContent = code || "----";
-    resultContainer.appendChild(card);
-  });
-
-  // Show result message based on how many cards matched
-  const resultText = document.getElementById("resultMessage");
-  if (correctCount === 0) {
-    resultText.textContent = "None of the cards belong to this chapter. Try again.";
-  } else if (correctCount < 3) {
-    resultText.textContent = `You got ${correctCount} clue${correctCount > 1 ? "s" : ""} right. Try again.`;
-  } else {
-    resultText.textContent = "All cards belong to the chapter, but the order is incorrect.";
-  }
 }
 
 
@@ -248,7 +206,7 @@ if (audioEl && audioGrid) {
     );
 
     if (solvedChapters.length === 3) {
-      window.location.href = "solve-full.html";
+      window.location.href = "solve-story.html";
     } else {
       window.location.href = "index.html";
     }
@@ -315,7 +273,7 @@ if (storyInput) {
       // Correct order, save and redirect
       sessionStorage.setItem("storySolved", "true");
       sessionStorage.setItem("storyChapters", JSON.stringify(codes));
-      window.location.href = "final-success.html";
+      window.location.href = "story-audio.html";
     } else if (allChaptersIncluded) {
       feedback.textContent = "The chapter codes are valid but not in the correct order.";
     } else {
