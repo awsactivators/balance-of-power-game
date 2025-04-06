@@ -1,101 +1,58 @@
-//LEVEL UP: LINKS - LOCATION Object 
-console.log(window.location);//Check it out!
+// Get the query parameter (?1000)
+const query = new URLSearchParams(window.location.search);
+const code = query.toString(); 
 
-//=WE CAN GET VALUES FROM THE location OBJECT
-myLocInfo = location.href;//LOCATION OF THE FILE
-//myLocInfo = location.host;//WEBSITE
-//myLocInfo = location.hostname;//INCLUDES PROTOCOL
-//myLocInfo = location.pathname;//PATH AFTER WEBSITE
-myLocInfo = location.search;//GETS THE QUERY STRING
-//=CHECKOUT http://bl.ocks.org/abernier/3070589 FOR MORE INFO
+// Create audio element
+const audioEl = new Audio();
 
-var outBox = document.getElementById("outPut");
-outBox.innerHTML = myLocInfo;
-
-//==USING THE QUERY STRING FROM .search PROGRAMATICALLY==
-//Create a variable to hold the search property query string.
-var searchString = location.search;
-let card= document.getElementsByClassName("card");
-let card1= document.getElementById("card1");
-let card2= document.getElementById("card2");
-let card3= document.getElementById("card3");
-let card4= document.getElementById("card4");
-let card5= document.getElementById("card5");
-let card6= document.getElementById("card6");
-let card7= document.getElementById("card7");
-let card8= document.getElementById("card8");
-let card9= document.getElementById("card9");
-let card10= document.getElementById("card10");
-//Use logic (a switch for multiple cases) to provide content based on the query string.
-//NOTE: the string includes the ? so you need to include that in your check.
-if( searchString === "?chp1" ){
-	
-	card1.style.display = "block" ;
-	
+// Load the correct data
+if (gameData.chapters[code]) {
+  const chapter = gameData.chapters[code];
+  displayCard(chapter.image);
+  audioEl.src = chapter.audio;
+} else if (gameData.cards[code]) {
+  const card = gameData.cards[code];
+  displayCard(card.image);
+  audioEl.src = card.audio;
+} else {
+  document.getElementById("outPut").innerHTML = "No match found for this code.";
 }
 
-else if ( searchString === "?chp1card1" ){
-	
-	card2.style.display = "block" ;
-	
+// Helper to show image dynamically
+function displayCard(imgSrc) {
+  const container = document.createElement("div");
+  container.className = "card";
+  container.innerHTML = `
+    <img src="${imgSrc}" width="200">
+    <div class="audio-controls">
+      <button onclick="rewind()" class="control-btns"><i class="fa-solid fa-rotate-left"></i>10</button>
+      <button onclick="togglePlay()" id="play" class="control-btns play-pause"><i class="fa-solid fa-play"></i></button>
+      <button onclick="togglePlay()" style="display: none;" id="pause" class="control-btns play-pause"><i class="fa-solid fa-pause"></i></button>
+      <button onclick="forward()" class="control-btns"><i class="fa-solid fa-rotate-right"></i>10</button>
+    </div>
+  `;
+  document.body.appendChild(container);
 }
 
-else if ( searchString === "?chp1card2" ){
-	
-	card3.style.display = "block" ;
-	
-}
+// Audio controls
+window.togglePlay = function () {
+  const play = document.getElementById("play");
+  const pause = document.getElementById("pause");
+  if (audioEl.paused) {
+    play.style.display = "none";
+    pause.style.display = "block";
+    audioEl.play();
+  } else {
+    play.style.display = "block";
+    pause.style.display = "none";
+    audioEl.pause();
+  }
+};
 
-else if ( searchString === "?chp1card3" ){
+window.rewind = function () {
+  audioEl.currentTime = Math.max(0, audioEl.currentTime - 10);
+};
 
-	card4.style.display = "block" ;	
-	
-}
-
-else if ( searchString === "?chp2" ){
-	card5.style.display = "block" ;
-    
-}
-
-else if ( searchString === "?chp2card1" ){
-
-	card6.style.display = "block" ;
-	
-}
-
-else if ( searchString === "?chp2card2" ){
-	
-	card7.style.display = "block" ;
-	
-}
-
-else if ( searchString === "?chp2card3" ){
-
-   
-  card8.style.display = "block" ;
-}
-
-else if ( searchString === "?chp3" ){
-	
-	card9.style.display = "block" ;
-   
-
-}
-
-else if ( searchString === "?chp3card1" ){
-	
-	card10.style.display = "block" ;
-	
-}
-
-else if ( searchString === "?chp3card2" ){
-	
-	card10.style.display = "block" ;
-	
-}
-
-else if ( searchString === "?chp3card3" ){
-	
-	card10.style.display = "block" ;
-	
-}
+window.forward = function () {
+  audioEl.currentTime = Math.min(audioEl.duration, audioEl.currentTime + 10);
+};

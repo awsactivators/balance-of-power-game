@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/play-area.css">
+    
     <script src="./javascript/camera.js"></script>
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <title>Play Area</title>
@@ -23,6 +23,8 @@
             </div>
             
             <div id="scanner"></div>
+            <button id="closeScanner" onclick="stopScanner()" style="display: none; position: fixed; top: 10px; right: 10px; z-index: 10000;">Close</button>
+
             
             <div class="action-item">
                 <p>Click here to solve a chapter:</p>

@@ -1,38 +1,33 @@
 function startScanner() {
     document.getElementById("scanner").style.display = "block";
+    document.getElementById("closeScanner").style.display = "block";
 
     const html5QrCode = new Html5Qrcode("scanner");
 
-    Html5Qrcode.getCameras().then(devices => {
-        if (devices && devices.length) {
-            const cameraId = devices[0].id;
-
-            html5QrCode.start(
-                cameraId,
-                {
-                    fps: 10,
-                    qrbox: 250
-                },
-                qrCodeMessage => {
-                    console.log(`Scanned: ${qrCodeMessage}`);
-
-                    // Stop scanner before redirect
-                    html5QrCode.stop().then(() => {
-                        document.getElementById("scanner").style.display = "none";
-                        // Redirect user to scanned URL
-                        window.location.href = qrCodeMessage;
-                    }).catch(err => {
-                        console.error("Failed to stop scanner", err);
-                    });
-                },
-                errorMessage => {
-                    console.warn(`QR Code scan error: ${errorMessage}`);
-                }
-            ).catch(err => {
-                console.error("Unable to start scanning", err);
+    html5QrCode.start(
+        { facingMode: "environment" },
+        { fps: 10, qrbox: 250 },
+        qrCodeMessage => {
+            html5QrCode.stop().then(() => {
+                window.location.href = `location-object.html?${qrCodeMessage}`;
             });
+        },
+        errorMessage => {
+            console.warn("QR Code scan error", errorMessage);
         }
-    }).catch(err => {
-        console.error("Camera access failed", err);
+    ).catch(err => {
+        console.error("Error starting scanner", err);
     });
+
+    // Store reference for stopping
+    window.html5QrCodeInstance = html5QrCode;
+}
+
+function stopScanner() {
+    if (window.html5QrCodeInstance) {
+        window.html5QrCodeInstance.stop().then(() => {
+            document.getElementById("scanner").style.display = "none";
+            document.getElementById("closeScanner").style.display = "none";
+        });
+    }
 }
