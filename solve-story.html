@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./css/solution.css" />
+
+  <!-- Javascript -->
+  <script src="./javascript/gameData.js"></script>
+  <script src="./javascript/index.js" defer></script>
+
+  <title>Balance of Power - Solve Full Story</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Solve: FULL STORY</h2>
+    
+    <p>To solve this story, enter in the order you wish, the codes from the chapter cards. The events in the chapters should be chronological:</p>
+
+    <p id="storyFeedback" class="error-text" role="alert" aria-live="polite"></p>
+    <input type="text" id="story1" aria-describedby="storyFeedback" maxlength="5" placeholder="Chapter 1 Card Code" />
+    <input type="text" id="story2" aria-describedby="storyFeedback" maxlength="5" placeholder="Chapter 2 Card Code" />
+    <input type="text" id="story3" aria-describedby="storyFeedback" maxlength="5" placeholder="Chapter 3 Card Code" />
+
+    <div class="route-btns">
+      <button onclick="solveStory()" id="solve-story">SOLVE STORY</button>
+      <a href="./solution.html" class="solve-chp-btn" id="solve-chp-btn" >SOLVE CHAPTER</a>
+      <a href="./index.html" class="home-btn">BACK TO HOME</a>
+    </div>
+  </div>
+</body>
+</html>

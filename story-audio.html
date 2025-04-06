@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./css/solution.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Javascript -->
+  <script src="./javascript/gameData.js"></script>
+  <script src="./javascript/index.js" defer></script>
+
+  <title>Balance of Power - Story Solved</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Mystery Solved!</h2>
+    <h3 id="mysterySolved"></h3>
+
+    <div class="card-grid" id="finalCards">
+      <!-- Final chapter images will be displayed here -->
+    </div>
+
+    <h3>Congratulations, you found all the clues and solved the mystery. </h3>
+
+    <p>Listen to the full story below</p>
+
+    <div class="audio-controls">
+      <button onclick="rewind()" class="control-btns" id="rewind"><i class="fa-solid fa-rotate-left"></i>10</button>
+      <button onclick="togglePlay()" id="play" class="control-btns play-pause"><i class="fa-solid fa-play"></i></button>
+      <button onclick="togglePlay()" style="display: none;" id="pause" class="control-btns play-pause"><i class="fa-solid fa-pause"></i></button>
+      <button onclick="forward()" class="control-btns" id="forward"><i class="fa-solid fa-rotate-right"></i>10</button>
+    </div>
+
+    <audio id="finalAudio"></audio>
+
+      <div class="continue-container">
+        <div class="continue-btn">RESTART SOLUTION</div>
+        <button class="continue-button" onclick="restartGame()">
+          <i class="fa-solid fa-arrows-rotate"></i> 
+        </button>
+      </div>
+  
+  </div>
+</body>
+</html>

@@ -28,65 +28,74 @@ let card9= document.getElementById("card9");
 let card10= document.getElementById("card10");
 //Use logic (a switch for multiple cases) to provide content based on the query string.
 //NOTE: the string includes the ? so you need to include that in your check.
-if( searchString === "?card1" ){
+if( searchString === "?chp1" ){
 	
 	card1.style.display = "block" ;
 	
-	// outBox.innerHTML = "<p>You used the LEFT QR code!</p>";
+}
 
-	
-}else if ( searchString === "?card2" ){
-	// outBox.innerHTML = "<p>You used the RIGHT QR code!</p>";
+else if ( searchString === "?chp1card1" ){
 	
 	card2.style.display = "block" ;
 	
-}else if ( searchString === "?card3" ){
-	// outBox.innerHTML = "<p>You used the RIGHT QR code!</p>";
+}
+
+else if ( searchString === "?chp1card2" ){
 	
 	card3.style.display = "block" ;
 	
-}else if ( searchString === "?card4" ){
-	// outBox.innerHTML = "<p>You used the RIGHT QR code!</p>";
+}
+
+else if ( searchString === "?chp1card3" ){
 
 	card4.style.display = "block" ;	
 	
 }
-else if ( searchString === "?card5" ){
-	// outBox.innerHTML = "<p>You used the RIGHT QR code!</p>";
+
+else if ( searchString === "?chp2" ){
 	card5.style.display = "block" ;
     
 }
-else if ( searchString === "?card6" ){
+
+else if ( searchString === "?chp2card1" ){
 
 	card6.style.display = "block" ;
 	
-
 }
 
-else if ( searchString === "?card7" ){
+else if ( searchString === "?chp2card2" ){
 	
 	card7.style.display = "block" ;
 	
-
 }
 
-else if ( searchString === "?card8" ){
+else if ( searchString === "?chp2card3" ){
 
    
-    card8.style.display = "block" ;
-   
+  card8.style.display = "block" ;
 }
 
-else if ( searchString === "?card9" ){
+else if ( searchString === "?chp3" ){
 	
 	card9.style.display = "block" ;
    
 
 }
 
-else if ( searchString === "?card10" ){
+else if ( searchString === "?chp3card1" ){
 	
 	card10.style.display = "block" ;
 	
+}
 
+else if ( searchString === "?chp3card2" ){
+	
+	card10.style.display = "block" ;
+	
+}
+
+else if ( searchString === "?chp3card3" ){
+	
+	card10.style.display = "block" ;
+	
 }

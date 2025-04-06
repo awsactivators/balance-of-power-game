@@ -4,33 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/play-area.css">
-    <script src="camera.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/play-area.css">
+    <script src="./javascript/camera.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <title>Play Area</title>
 </head>
 
 <body>
 
     <section class="play-area-frame">
-        <h1 class="title">&lt;h1&gt;TITLE&lt;/h1&gt;</h1>
+        <h1 class="title">BALANCE OF POWER</h1>
 
         <div class="actions">
             <div class="action-item">
                 <p>Click here to discover a clue:</p>
-                <button class="btn btn-blue">SCAN CARD TO LISTEN</button>
+                <button class="btn btn-blue" onclick="startScanner()">SCAN CARD TO LISTEN</button>
             </div>
+            
+            <div id="scanner"></div>
             
             <div class="action-item">
                 <p>Click here to solve a chapter:</p>
-                <button id="startCamera" class="btn btn-orange" >SOLVE CHAPTER</button>
-                <!-- <video id="videoElement" autoplay></video> -->
-                <!-- <button class="btn btn-orange">SOLVE CHAPTER</button> -->
+                <button id="startCamera" class="btn btn-orange" ><a href="./solution.html">SOLVE CHAPTER</a></button>
             </div>
 
             <div class="action-item">
                 <p>Click here to solve the whole story:</p>
-                <button class="btn btn-green">SOLVE STORY</button>
+                <button class="btn btn-green"><a href="./solve-story.html">SOLVE STORY</a></button>
             </div>
         </div>
     </section>

@@ -5,23 +5,28 @@ body{
     color: aliceblue;
     background-color: #3C2F2A;
 }
+
 .card{
     display: none;
 }
+
 .organge {
 color: #bf5525;
 }
+
 h1, h2{
     text-align: center;
     margin: auto;
 }
+
 h1{
     font-size: 24px;
     font-weight: bold;
     color: #E5E5D5;
     text-align: center;
-   
+    margin-bottom: 20px;
 }
+
 h2{
     font-size: 20px;
     font-weight: bold;
@@ -243,4 +248,15 @@ audio {
 .action-item p {
     margin-bottom: 0.5rem;
     font-size: 1rem;
+}
+
+.action-item a{
+    text-decoration: none;
+    color: white;
+}
+
+#scanner {
+    display: none;
+    width: 300px;
+    margin-top: 20px;
 }
