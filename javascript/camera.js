@@ -9,7 +9,7 @@ function startScanner() {
         { fps: 10, qrbox: 250 },
         qrCodeMessage => {
             html5QrCode.stop().then(() => {
-                window.location.href = `location-object.html?${qrCodeMessage}`;
+                window.location.href = qrCodeMessage;
             });
         },
         errorMessage => {
