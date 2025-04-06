@@ -2,24 +2,25 @@ body{
     margin: auto;
     max-width: 393px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: aliceblue;
+    color: #E5E5D5;
     background-color: #3C2F2A;
-}
-
-.card{
-    display: none;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .organge {
-color: #bf5525;
+    color: #bf5525;
 }
 
-h1, h2{
+h1, h2 {
     text-align: center;
     margin: auto;
 }
 
-h1{
+h1 {
     font-size: 24px;
     font-weight: bold;
     color: #E5E5D5;
@@ -27,7 +28,7 @@ h1{
     margin-bottom: 20px;
 }
 
-h2{
+h2 {
     font-size: 20px;
     font-weight: bold;
     color: #E5E5D5;
@@ -37,55 +38,31 @@ h2{
 }
 
 
-p{   margin: 0;
+p {   margin: 0;
     font-size: 16px;
     text-align:left;
  
 }  
 
-
-/* Controls: Rewind, Pause, Forward */
-.audioControls {
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-center;
-    justify-content: center;
-    gap: 13px;
-    color: #ccccbb;
+#closeScanner {
+    display: none; 
+    position: fixed; 
+    top: 10px; 
+    right: 10px; 
+    z-index: 10000;
+    background-color: #bf5525;
+    padding: 8px;
+    color: #E5E5D5;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
 }
 
-.rewind {
-    letter-spacing: -0.05em;
-    font-weight: bold;
-}
-
-.pause-icon {
-    width: 70px;
-    position: relative;
-}
-
-.continue-parent {
-    margin: 0 0 0 auto;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.continue {
-    font-weight: bold;
-}
-
-/* Styling for Continue button */
-.forward-icon {
-    width: 50px;
-    height: auto;
+#closeScanner:hover {
+    background-color: #E5E5D5;
+    color: black;
     cursor: pointer;
 }
-
 
 
 /* Buttons */
@@ -103,6 +80,7 @@ p{   margin: 0;
     padding: 10px;
     box-sizing: border-box;
 }
+
 .btn {
     width: 100%;
     height: 3.5rem;
@@ -110,11 +88,12 @@ p{   margin: 0;
     font-weight: bold;
     border-radius: 15px;
     border: none;
-    color: white;
+    color: #E5E5D5;
     cursor: pointer;
     box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .sm-btn{
     width: 80%;
     height: 3.5rem;
@@ -122,15 +101,18 @@ p{   margin: 0;
     font-weight: bold;
     border-radius: 15px;
     border: none;
-    color: white;
+    color: #E5E5D5;
     cursor: pointer;
     box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .btn:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
 }
+
+
 
 /* Button Colors */
 .btn-blue {
@@ -148,96 +130,15 @@ p{   margin: 0;
     box-shadow: 0px 0px 5px #848e51;
 }
 
-/* 4 images frame group */
-
-.intro-image-parent {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px 19px;
-}
-
-.intro-image {
-    width: 153px;
-    height: 159px;
-    border-radius: 10px;
-    background-color: #d3d3d3;
-    border: 5px solid rgba(191, 85, 37, 0.8);
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.frame-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 37px;
-}
-
-.image {
-    width: 100%;
-    height: 339px;
-    border-radius: 10px;
-    background-color: #d3d3d3;
-    border: 5px solid rgba(191, 85, 37, 0.8);
-    box-sizing: border-box;
-    overflow: hidden;
-}
-.solution-correct-frame{
-    position: relative;
-    margin-top:66px ;
-    width: 325px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start;
-    gap: 127px;
-}
-
-
-.custom-audio-player {
-    margin: auto;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 10px;
-} 
-
- button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-img {
-    width: 70px; /* Adjust icon size */
-}
-
-/* #progressBar {
-    width: 100%;
-    cursor: pointer;
-} */
-audio {
-    display: none;
-}
-.play{
-    color: aliceblue;
-}
-
-.audio-play-frame{
-    margin-top:148px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
 
 .play-area-frame{
-    margin-top: 122px; ;
-    text-align: center;
-    max-width: 400px;
+    /* margin-top: 100px; ; */
+    /* text-align: center; */
+    /* max-width: 400px; */
 }
+
+
+
 /* Actions */
 .actions {
     display: flex;
@@ -252,13 +153,84 @@ audio {
 
 .action-item a{
     text-decoration: none;
-    color: white;
+    color: #E5E5D5;
 }
 
-/* #scanner {
-    display: none;
-    width: 300px;
-    margin-top: 20px;
-} */
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
+#card-name {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #F6F3E9;
+}
+
+.card-container {
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
   
+
+
+/* Audio Controls */
+.audio-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 1.5em 0;
+}
+
+.control-btns {
+    background: #3C2F2A;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border: none;
+    color: #CCCCBB;
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.control-btns:hover {
+    background: #3C2F2A;
+    color: whitesmoke;
+
+}
+
+.play-pause {
+    background-color: #858E51;
+    border: 2px solid #CCCCBB;
+}
+
+.play-pause:hover {
+    background-color: #CCCCBB;
+    color: #858E51;
+    border: 2px solid #858E51;
+}
+
+#audio-controls #play,
+#audio-controls #pause {
+    background-color: #858E51;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.continue-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 2em;
+    gap: 15px;
+}

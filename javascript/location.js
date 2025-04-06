@@ -7,17 +7,23 @@ const code = searchString.startsWith("?") ? searchString.substring(1) : searchSt
 const audioEl = new Audio();
 
 function displayCard(imgSrc, title) {
-  const h1 = document.getElementById("card-name");
+  // Clear the page
+  document.body.innerHTML = '';
+
+  // Create wrapper for h1 and card
+  const wrapper = document.createElement("div");
+  wrapper.className = "card-wrapper";
+
+  // Create and set h1
+  const h1 = document.createElement("h1");
   h1.innerText = title;
+  h1.id = "card-name";
 
-  // Clear the page before rendering
-  document.body.innerHTML = ''; 
-  document.body.appendChild(h1); 
-
+  // Create card container
   const container = document.createElement("div");
-  container.className = "card";
+  container.className = "card-container";
   container.innerHTML = `
-    <img src="${imgSrc}" width="200">
+    <img src="${imgSrc}" width="400">
     <div class="audio-controls">
       <button onclick="rewind()" class="control-btns"><i class="fa-solid fa-rotate-left"></i>10</button>
       <button onclick="togglePlay()" id="play" class="control-btns play-pause"><i class="fa-solid fa-play"></i></button>
@@ -25,8 +31,12 @@ function displayCard(imgSrc, title) {
       <button onclick="forward()" class="control-btns"><i class="fa-solid fa-rotate-right"></i>10</button>
     </div>
   `;
-  document.body.appendChild(container);
+
+	wrapper.appendChild(h1);
+  wrapper.appendChild(container);
+  document.body.appendChild(wrapper);
 }
+
 
 // Logic
 if (gameData.chapters[code]) {
