@@ -5,21 +5,14 @@ const code = query.toString();
 // Create audio element
 const audioEl = new Audio();
 
-// Load the correct data
-if (gameData.chapters[code]) {
-  const chapter = gameData.chapters[code];
-  displayCard(chapter.image);
-  audioEl.src = chapter.audio;
-} else if (gameData.cards[code]) {
-  const card = gameData.cards[code];
-  displayCard(card.image);
-  audioEl.src = card.audio;
-} else {
-  document.getElementById("outPut").innerHTML = "No match found for this code.";
-}
+function displayCard(imgSrc, title) {
+  const h1 = document.getElementById("card-name");
+  h1.innerText = title;
 
-// Helper to show image dynamically
-function displayCard(imgSrc) {
+  // Clear the page before rendering
+  document.body.innerHTML = ''; 
+  document.body.appendChild(h1); 
+
   const container = document.createElement("div");
   container.className = "card";
   container.innerHTML = `
@@ -32,6 +25,19 @@ function displayCard(imgSrc) {
     </div>
   `;
   document.body.appendChild(container);
+}
+
+// Logic
+if (gameData.chapters[code]) {
+  const chapter = gameData.chapters[code];
+  audioEl.src = chapter.audio;
+  displayCard(chapter.image, chapter.name);
+} else if (gameData.cards[code]) {
+  const card = gameData.cards[code];
+  audioEl.src = card.audio;
+  displayCard(card.image, card.name);
+} else {
+  document.body.innerHTML = "<h2>No match found for this QR code.</h2>";
 }
 
 // Audio controls

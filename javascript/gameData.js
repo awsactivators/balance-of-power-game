@@ -27,14 +27,14 @@ const gameData = {
     }
   },
   cards: {
-    "1001": { id: "1001", chapter: "1000", audio: "./audio/audio1.mp3", image: "./images/ch1-clue1-7295-name-tag.jpg" },
-    "1002": { id: "1002", chapter: "1000", audio: "./audio/audio1.mp3", image: "./images/ch1-clue2-1603-family-photo.jpg" },
-    "1003": { id: "1003", chapter: "1000", audio: "./audio/audio1.mp3", image: "./images/ch1-clue3-8472-bible-map.jpg" },
-    "2001": { id: "2001", chapter: "2000", audio: "./audio/audio1.mp3", image: "./images/ch2-clue1-2038-icbm-plans.jpg" },
-    "2002": { id: "2002", chapter: "2000", audio: "./audio/audio1.mp3", image: "./images/ch2-clue2-6749-cigar-butt.jpg" },
-    "2003": { id: "2003", chapter: "2000", audio: "./audio/audio1.mp3", image: "./images/ch2-clue3-9150-rosary.jpg" },
-    "3001": { id: "3001", chapter: "3000", audio: "./audio/audio1.mp3", image: "./images/ch3-clue1-7314-hammer-sickle-zippo.jpg" },
-    "3002": { id: "3002", chapter: "3000", audio: "./audio/audio1.mp3", image: "./images/ch3-clue2-0527-plane-tail-end.jpg" },
-    "3003": { id: "3003", chapter: "3000", audio: "./audio/audio1.mp3", image: "./images/ch3-clue3-3960-flight-log.jpg" }
+    "1001": { id: "1001", chapter: "1000", name: "Name tag", audio: "./audio/audio1.mp3", image: "./images/ch1-clue1-7295-name-tag.jpg" },
+    "1002": { id: "1002", chapter: "1000", name: "Family photo", audio: "./audio/audio1.mp3", image: "./images/ch1-clue2-1603-family-photo.jpg" },
+    "1003": { id: "1003", chapter: "1000", name: "Bible map", audio: "./audio/audio1.mp3", image: "./images/ch1-clue3-8472-bible-map.jpg" },
+    "2001": { id: "2001", chapter: "2000", name: "ICBM plans", audio: "./audio/audio1.mp3", image: "./images/ch2-clue1-2038-icbm-plans.jpg" },
+    "2002": { id: "2002", chapter: "2000", name: "Cigar butt", audio: "./audio/audio1.mp3", image: "./images/ch2-clue2-6749-cigar-butt.jpg" },
+    "2003": { id: "2003", chapter: "2000", name: "Rosary", audio: "./audio/audio1.mp3", image: "./images/ch2-clue3-9150-rosary.jpg" },
+    "3001": { id: "3001", chapter: "3000", name: "Hammer stickle zippo", audio: "./audio/audio1.mp3", image: "./images/ch3-clue1-7314-hammer-sickle-zippo.jpg" },
+    "3002": { id: "3002", chapter: "3000", name: "Plane tail end", audio: "./audio/audio1.mp3", image: "./images/ch3-clue2-0527-plane-tail-end.jpg" },
+    "3003": { id: "3003", chapter: "3000", name: "Flight log", audio: "./audio/audio1.mp3", image: "./images/ch3-clue3-3960-flight-log.jpg" }
   }
 };
