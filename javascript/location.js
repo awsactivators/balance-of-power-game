@@ -1,6 +1,7 @@
 // Get the query parameter (?1000)
-const query = new URLSearchParams(window.location.search);
-const code = query.toString(); 
+const searchString = window.location.search;
+const code = searchString.startsWith("?") ? searchString.substring(1) : searchString; 
+
 
 // Create audio element
 const audioEl = new Audio();
