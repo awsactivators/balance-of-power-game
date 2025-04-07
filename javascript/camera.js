@@ -8,22 +8,21 @@ function startScanner() {
         { facingMode: "environment" },
         { fps: 10, qrbox: 250 },
         qrCodeMessage => {
-            html5QrCode.stop().then(() => {
-                // window.location.href = qrCodeMessage;
-                const match = qrCodeMessage.match(/(\d{4})/);
-                const code = match ? match[1] : null;
-
-                if (code) {
-                    window.location.href = `location-object.html?${code}`;
-                } else {
-                    alert("Invalid QR code. Make sure it contains a valid ID like 1000.");
-                }
-            });
+          html5QrCode.stop().then(() => {
+            const match = qrCodeMessage.match(/(\d{4})/);
+            const code = match ? match[1] : null;
+      
+            if (code) {
+              window.location.href = `${window.location.origin}/balance-of-power-game/location-object.html?${code}`;
+            } else {
+              alert("Invalid QR code. Please make sure it's linked to a valid ID like 1000.");
+            }
+          });
         },
         errorMessage => {
-            console.warn("QR Code scan error", errorMessage);
+          console.warn("QR scan error", errorMessage);
         }
-    ).catch(err => {
+      ).catch(err => {
         console.error("Error starting scanner", err);
     });
 
