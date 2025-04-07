@@ -10,15 +10,8 @@ function startScanner() {
         qrCodeMessage => {
             html5QrCode.stop().then(() => {
                 // window.location.href = qrCodeMessage;
-                // Extract 4-digit code from qrCodeMessage
-                const match = qrCodeMessage.match(/(\d{4})/);
-                const code = match ? match[1] : null;
-
-                if (code) {
+                const code = qrCodeMessage.trim();
                 window.location.href = `location-object.html?${code}`;
-                } else {
-                alert("Invalid QR code. Make sure it's linked to a valid ID.");
-                }
             });
         },
         errorMessage => {
