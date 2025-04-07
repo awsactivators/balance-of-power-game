@@ -9,7 +9,16 @@ function startScanner() {
         { fps: 10, qrbox: 250 },
         qrCodeMessage => {
             html5QrCode.stop().then(() => {
-                window.location.href = qrCodeMessage;
+                // window.location.href = qrCodeMessage;
+                // Extract 4-digit code from qrCodeMessage
+                const match = qrCodeMessage.match(/(\d{4})/);
+                const code = match ? match[1] : null;
+
+                if (code) {
+                window.location.href = `location-object.html?${code}`;
+                } else {
+                alert("Invalid QR code. Make sure it's linked to a valid ID.");
+                }
             });
         },
         errorMessage => {
