@@ -23,6 +23,33 @@ function startScanner() {
     window.html5QrCodeInstance = html5QrCode;
 }
 
+function showScanner() {
+    const scannerDiv = document.createElement("div");
+    scannerDiv.id = "scanner";
+    document.body.appendChild(scannerDiv);
+  
+    const html5QrCode = new Html5Qrcode("scanner");
+  
+    html5QrCode.start(
+      { facingMode: "environment" },
+      { fps: 10, qrbox: 250 },
+      qrCodeMessage => {
+        html5QrCode.stop().then(() => {
+          window.location.href = `location-object.html?${qrCodeMessage}`;
+        });
+      },
+      errorMessage => {
+        console.warn("QR Code scan error", errorMessage);
+      }
+    ).catch(err => {
+      console.error("Unable to start scanner", err);
+    });
+  
+    // Store for stopping later (if needed)
+    window.html5QrCodeInstance = html5QrCode;
+  }
+  
+
 function stopScanner() {
     if (window.html5QrCodeInstance) {
         window.html5QrCodeInstance.stop().then(() => {

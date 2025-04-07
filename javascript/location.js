@@ -23,7 +23,7 @@ function displayCard(imgSrc, title) {
   const container = document.createElement("div");
   container.className = "card-container";
   container.innerHTML = `
-    <img src="${imgSrc}" width="400">
+    <img src="${imgSrc}" alt="${title}" class="card-image" />
     <div class="audio-controls">
       <button onclick="rewind()" class="control-btns"><i class="fa-solid fa-rotate-left"></i>10</button>
       <button onclick="togglePlay()" id="play" class="control-btns play-pause"><i class="fa-solid fa-play"></i></button>
@@ -32,8 +32,42 @@ function displayCard(imgSrc, title) {
     </div>
   `;
 
+	// Scan Another Card button
+  const scanAgainBtn = document.createElement("button");
+  scanAgainBtn.className = "btn rescan-btn";
+  scanAgainBtn.innerText = "Scan Another Card";
+  scanAgainBtn.onclick = function () {
+		document.body.innerHTML = ''; 
+	
+		// scanner div
+		const scannerDiv = document.createElement("div");
+		scannerDiv.id = "scanner";
+		document.body.appendChild(scannerDiv);
+
+		// Close button
+		const closeBtn = document.createElement("button");
+		closeBtn.id = "closeAnotherScanner";
+		closeBtn.innerText = "Close";
+		closeBtn.onclick = () => {
+			window.location.href = "index.html"; 
+		};
+		document.body.appendChild(closeBtn);
+	
+		// load the html5-qrcode script 
+		if (typeof Html5Qrcode === "undefined") {
+			const script = document.createElement("script");
+			script.src = "https://unpkg.com/html5-qrcode"; 
+			script.onload = () => showScanner(); 
+			document.body.appendChild(script);
+		} else {
+			showScanner(); 
+		}
+	};
+	
+
 	wrapper.appendChild(h1);
   wrapper.appendChild(container);
+	wrapper.appendChild(scanAgainBtn);
   document.body.appendChild(wrapper);
 }
 
