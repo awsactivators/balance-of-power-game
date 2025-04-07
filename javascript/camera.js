@@ -8,16 +8,27 @@ function startScanner() {
         { facingMode: "environment" },
         { fps: 10, qrbox: 250 },
         qrCodeMessage => {
-          html5QrCode.stop().then(() => {
-            const match = qrCodeMessage.match(/(\d{4})/);
-            const code = match ? match[1] : null;
-      
-            if (code) {
-              window.location.href = `${window.location.origin}/balance-of-power-game/location-object.html?${code}`;
-            } else {
-              alert("Invalid QR code. Please make sure it's linked to a valid ID like 1000.");
-            }
-          });
+            html5QrCode.stop().then(() => {
+                // If the message is a full valid URL starting with http(s), use it directly
+                if (qrCodeMessage.startsWith("http://") || qrCodeMessage.startsWith("https://")) {
+                  window.location.href = qrCodeMessage;
+                }
+        
+                // If the message is a relative path like balance-of-power-game/location-object.html?1000
+                else if (qrCodeMessage.startsWith("balance-of-power-game")) {
+                  window.location.href = `${window.location.origin}/${qrCodeMessage}`;
+                }
+        
+                // If the message is just a 4-digit code like 
+                else if (/^\d{4}$/.test(qrCodeMessage.trim())) {
+                  const code = qrCodeMessage.trim();
+                  window.location.href = `${window.location.origin}/balance-of-power-game/location-object.html?${code}`;
+                }
+        
+                else {
+                  alert("Invalid QR code format. It must contain a valid ID or path.");
+                }
+              });
         },
         errorMessage => {
           console.warn("QR scan error", errorMessage);
