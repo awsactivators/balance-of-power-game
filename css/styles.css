@@ -228,8 +228,8 @@ p {
 .control-btns {
     background: #3C2F2A;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border: none;
     color: #CCCCBB;
     font-size: 2em;
@@ -243,7 +243,7 @@ p {
 }
 
 .control-btns .fa-solid {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .control-btns:hover {
@@ -365,6 +365,26 @@ p {
 .continue-button i{
     text-decoration: none;
     color: black;
+}
+
+.home-btn {
+    background-color: #9d9d9d;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 0.9em 2em;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+    margin-top: 20px;
+}
+  
+.home-btn:hover {
+    background-color: #7a7a7a;
+    transform: scale(1.02);
 }
   
 

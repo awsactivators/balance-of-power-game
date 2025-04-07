@@ -49,7 +49,7 @@ function displayCard(imgSrc, title) {
 		closeBtn.id = "closeAnotherScanner";
 		closeBtn.innerText = "Close";
 		closeBtn.onclick = () => {
-			window.location.href = "index.html"; 
+			window.location.href = "home.html"; 
 		};
 		document.body.appendChild(closeBtn);
 	
@@ -63,13 +63,23 @@ function displayCard(imgSrc, title) {
 			showScanner(); 
 		}
 	};
+
+	const homeBtn = document.createElement("button");
+	homeBtn.className = "btn home-btn";
+	homeBtn.innerText = "Home";
+	homeBtn.onclick = function () {
+		window.location.href = "home.html"; 
+	};
 	
 
 	wrapper.appendChild(h1);
   wrapper.appendChild(container);
 	wrapper.appendChild(scanAgainBtn);
+	wrapper.appendChild(homeBtn);
   document.body.appendChild(wrapper);
 }
+
+
 
 
 // Logic

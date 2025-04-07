@@ -5,40 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    
-    <script src="./javascript/camera.js"></script>
-    <script src="https://unpkg.com/html5-qrcode" type="text/javascript" defer></script>
-    <title>Play Area</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Javascript -->
+    <script src="./javascript/gameData.js"></script>
+    <script src="./javascript/audio.js" defer></script>
+    <title>Document</title>
 </head>
 
 <body>
+    <div class="story-cover">
+        <div class="story-cover-child"></div>
+        <div class="frame-parent">
+            <div class="frame-group">
+                <!-- Intro Image and Text Content -->
+                <div class="intro-image-parent">
+                  <div class="container">
+                    <h1>Story Cover</h1>
+                    <p>This is a snippet to the story.</p>
+                  </div>
+                  <img class="image" alt="Introduction Image" src="./images/ch1-3841-uniform-navy-pilot.jpg">
 
-    <section class="play-area-frame">
-        <h1 class="title">BALANCE OF POWER</h1>
+                  <audio id="coverAudio">
+                    <source src="./audio/gangbusters.mp3" type="audio/mpeg">
+                  </audio>
+                  
 
-        <div class="actions">
-            <div class="action-item">
-                <p>Click here to discover a clue:</p>
-                <button class="btn btn-blue" onclick="startScanner()">SCAN CARD TO LISTEN</button>
-            </div>
-            
-            <div id="scanner"></div>
-            <button id="closeScanner" onclick="stopScanner()" style="display: none; position: fixed; top: 10px; right: 10px; z-index: 10000;">Close</button>
+                  <div class="audio-controls">
+                    <button onclick="rewind()" class="control-btns" id="rewind"><i class="fa-solid fa-rotate-left"></i>10</button>
+                    <button onclick="togglePlay()" id="play" class="control-btns play-pause"><i class="fa-solid fa-play"></i></button>
+                    <button onclick="togglePlay()" style="display: none;" id="pause" class="control-btns play-pause"><i class="fa-solid fa-pause"></i></button>
+                    <button onclick="forward()" class="control-btns" id="forward"><i class="fa-solid fa-rotate-right"></i>10</button>
+                  </div>
+                  
+                  <div class="continue-container">
+                    <div class="continue-btn">CONTINUE</div>
+                    <button class="continue-button"><a href="./home.html"><i class="fa-solid fa-forward-step"></i></a>
+                       
+                    </button>
+                  </div>
+                </div>
 
-            
-            <div class="action-item">
-                <p>Click here to solve a chapter:</p>
-                <button id="startCamera" class="btn btn-orange" ><a href="./solution.html">SOLVE CHAPTER</a></button>
-            </div>
-            <div></div>
-
-            <div class="action-item">
-                <p>Click here to solve the whole story:</p>
-                <button class="btn btn-green"><a href="./solve-story.html">SOLVE STORY</a></button>
             </div>
         </div>
-    </section>
+    </div>
 
+   
+    </div>
 </body>
 
 </html>
