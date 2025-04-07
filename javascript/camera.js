@@ -9,26 +9,8 @@ function startScanner() {
         { fps: 10, qrbox: 250 },
         qrCodeMessage => {
             html5QrCode.stop().then(() => {
-                // If the message is a full valid URL starting with http(s), use it directly
-                if (qrCodeMessage.startsWith("http://") || qrCodeMessage.startsWith("https://")) {
-                  window.location.href = qrCodeMessage;
-                }
-        
-                // If the message is a relative path like balance-of-power-game/location-object.html?1000
-                else if (qrCodeMessage.startsWith("balance-of-power-game")) {
-                  window.location.href = `${window.location.origin}/${qrCodeMessage}`;
-                }
-        
-                // If the message is just a 4-digit code like 
-                else if (/^\d{4}$/.test(qrCodeMessage.trim())) {
-                  const code = qrCodeMessage.trim();
-                  window.location.href = `${window.location.origin}/balance-of-power-game/location-object.html?${code}`;
-                }
-        
-                else {
-                  alert("Invalid QR code format. It must contain a valid ID or path.");
-                }
-              });
+                window.location.href = qrCodeMessage;
+            });
         },
         errorMessage => {
           console.warn("QR scan error", errorMessage);
@@ -53,7 +35,7 @@ function showScanner() {
       { fps: 10, qrbox: 250 },
       qrCodeMessage => {
         html5QrCode.stop().then(() => {
-          window.location.href = `location-object.html?${qrCodeMessage}`;
+            window.location.href = qrCodeMessage;
         });
       },
       errorMessage => {
@@ -63,7 +45,7 @@ function showScanner() {
       console.error("Unable to start scanner", err);
     });
   
-    // Store for stopping later (if needed)
+    // Store for stopping later
     window.html5QrCodeInstance = html5QrCode;
   }
   

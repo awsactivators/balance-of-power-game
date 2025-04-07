@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/solution-cover.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Javascript -->
+    <script src="./javascript/gameData.js"></script>
+    <script src="./javascript/audio.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -16,44 +20,38 @@
             <div class="frame-group">
                 <!-- Intro Image and Text Content -->
                 <div class="intro-image-parent">
-                    <img class="image" alt="Introduction Image" src="img/intro-image.jpg">
+                  <div class="container">
+                    <h1>Story Cover</h1>
+                    <p>This is a snippet to the story.</p>
+                  </div>
+                  <img class="image" alt="Introduction Image" src="./images/ch1-3841-uniform-navy-pilot.jpg">
 
-                    <div class="container">
-                        <h1>Full Audio: CHAPTER</h1>
-                        <p>This is the text of the story.</p>
-                        <p>Here is another sentence. It’s not another line. The text div is just this big.</p>
-                        <p>Listen to the complete story.</p>
-                    </div>
-
-                    <!-- Play Button -->
-                  <button class="custom-audio-player" id="playPauseBtn">
-                        <br><img id="playPauseIcon" src="img/button-play.svg" alt="Play">
-                        <div class="play">PLAY</div>
-                    </button>
+                  <audio id="coverAudio">
+                    <source src="./audio/gangbusters.mp3" type="audio/mpeg">
+                  </audio>
                   
 
+                  <div class="audio-controls">
+                    <button onclick="rewind()" class="control-btns" id="rewind"><i class="fa-solid fa-rotate-left"></i>10</button>
+                    <button onclick="togglePlay()" id="play" class="control-btns play-pause"><i class="fa-solid fa-play"></i></button>
+                    <button onclick="togglePlay()" style="display: none;" id="pause" class="control-btns play-pause"><i class="fa-solid fa-pause"></i></button>
+                    <button onclick="forward()" class="control-btns" id="forward"><i class="fa-solid fa-rotate-right"></i>10</button>
+                  </div>
+                  
+                  <div class="continue-container">
+                    <div class="continue-btn">CONTINUE</div>
+                    <button class="continue-button"><a href="./index.html"><i class="fa-solid fa-forward-step"></i></a>
+                       
+                    </button>
+                  </div>
                 </div>
 
             </div>
-            <!-- Continue Button -->
-            <div>
-                <!-- Audio Element (Hidden) -->
-                <audio id="myAudio">
-                    <source src="gangbusters.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <!--  endContinue Button -->
-
-            <a href="play-area.html" class="continue-parent">
-                <div class="continue">CONTINUE</div>
-                <img class="forward-icon" alt="Forward" src="img/forward.svg" id="skipForwardIcon">
-            </a>
         </div>
     </div>
 
    
     </div>
-    <script src="javascript/audio.js"></script>
 </body>
 
 </html>

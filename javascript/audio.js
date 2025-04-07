@@ -1,26 +1,32 @@
-const audio = document.getElementById("myAudio");
-const playPauseBtn = document.getElementById("playPauseBtn");
-const playPauseIcon = document.getElementById("playPauseIcon");
-const rewindBtn = document.getElementById("rewindBtn");
-const forwardBtn = document.getElementById("forwardBtn");
+const audio = document.getElementById("coverAudio");
+const playBtn = document.getElementById("play");
+const pauseBtn = document.getElementById("pause");
 
-// Toggle Play/Pause
-playPauseBtn.addEventListener("click", () => {
-    if (audio.paused) {
-        audio.play();
-        playPauseIcon.src = "img/pause.svg"; // Change to pause icon
-    } else {
-        audio.pause();
-        playPauseIcon.src = "img/button-play.svg"; // Change back to play icon
-    }
-});
+// Play/Pause Toggle
+window.togglePlay = function () {
+  if (audio.paused) {
+    audio.play();
+    playBtn.style.display = "none";
+    pauseBtn.style.display = "inline-flex";
+  } else {
+    audio.pause();
+    playBtn.style.display = "inline-flex";
+    pauseBtn.style.display = "none";
+  }
+};
 
-// Rewind Audio by 10 Seconds
-rewindBtn.addEventListener("click", () => {
-    audio.currentTime = Math.max(0, audio.currentTime - 10); // Prevent going below 0
-});
+// Rewind 10 seconds
+window.rewind = function () {
+  audio.currentTime = Math.max(0, audio.currentTime - 10);
+};
 
-// Forward Audio by 10 Seconds
-forwardBtn.addEventListener("click", () => {
-    audio.currentTime = Math.min(audio.duration, audio.currentTime + 10); // Prevent going beyond duration
+// Forward 10 seconds
+window.forward = function () {
+  audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+};
+
+// Reset button states when audio ends
+audio.addEventListener("ended", () => {
+  playBtn.style.display = "inline-flex";
+  pauseBtn.style.display = "none";
 });
