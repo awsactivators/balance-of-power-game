@@ -210,6 +210,8 @@ if (audioEl && audioGrid) {
     audioEl.currentTime = Math.min(audioEl.duration, audioEl.currentTime + 10);
   };
 
+  // Logic for audio progress bar!
+
   // Logic to go back to home or proceed to final story
   window.handleContinue = function () {
     const solvedChapters = ["1000", "2000", "3000"].filter(chap =>
@@ -219,7 +221,7 @@ if (audioEl && audioGrid) {
     if (solvedChapters.length === 3) {
       window.location.href = "solve-story.html";
     } else {
-      window.location.href = "solution.html";
+      window.location.href = "home.html";
     }
   };
 }
@@ -372,10 +374,11 @@ if (finalAudio && finalCardsContainer) {
   window.forward = function () {
     finalAudio.currentTime = Math.min(finalAudio.duration, finalAudio.currentTime + 10);
   };
+  // Logic for audio progress bar
 
   // Restart game
   window.restartGame = function () {
     sessionStorage.clear();
-    window.location.href = "solution.html";
+    window.location.href = "home.html";
   };
 }

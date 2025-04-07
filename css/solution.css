@@ -27,8 +27,8 @@ body {
 
 /* Resuable style */
 .error-text {
-  color: red;
-  font-size: 0.9em;
+  color: #FF6B6B;
+  font-size: 1.2em;
   margin-top: 1em;
   display: block;
 }
@@ -74,6 +74,7 @@ body {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s ease;
+  width:100%;
 }
 
 .home-btn:hover {
@@ -104,18 +105,20 @@ body {
 
 /* Home page */
 #chapterError {
-  color: red;
-  font-size: 0.9em;
+  color: #FF6B6B;
+  font-size: 1.2em;
+  font-weight:bolder;
   margin-bottom: 0.5em;
   display: block;
+  word-spacing:3px;
 }
 
-.container p {
+/* .container p {
   color: #CCCCBB;
-  font-size: 1em;
+  font-size: 1.2em;
   margin-bottom: 1em;
   line-height: 1.4;
-}
+} */
 
 input#chapterInput {
   width: 100%;
@@ -144,6 +147,7 @@ button {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s ease;
+  width: 100%;
 }
 
 button:hover {
@@ -288,18 +292,21 @@ h2#audioTitle {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
+
 
 #chapterImageContainer img {
   width: 100%;
   border-radius: 12px;
   border-radius: 12px;
   display: block;
+  border: 5px solid #BF5525;
 }
 
 .container p {
   color: #CCCCBB;
-  font-size: 1em;
+  font-size: 1.3em;
   margin: 1em auto;
   line-height: 1.4;
 }
