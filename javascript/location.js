@@ -1,6 +1,8 @@
 // Get the query parameter (?1000)
 const searchString = window.location.search;
 const code = searchString.startsWith("?") ? searchString.substring(1) : searchString; 
+let hasEnded = false;
+
 
 
 // Create audio element
@@ -77,6 +79,14 @@ function displayCard(imgSrc, title) {
 	wrapper.appendChild(scanAgainBtn);
 	wrapper.appendChild(homeBtn);
   document.body.appendChild(wrapper);
+
+	audioEl.addEventListener("ended", () => {
+		const playBtn = document.getElementById("play");
+		const pauseBtn = document.getElementById("pause");
+		playBtn.style.display = "inline-block";
+		pauseBtn.style.display = "none";
+	});
+	
 }
 
 
@@ -97,18 +107,20 @@ if (gameData.chapters[code]) {
 
 // Audio controls
 window.togglePlay = function () {
-  const play = document.getElementById("play");
-  const pause = document.getElementById("pause");
-  if (audioEl.paused) {
-    play.style.display = "none";
-    pause.style.display = "block";
+  const playBtn = document.getElementById("play");
+  const pauseBtn = document.getElementById("pause");
+
+  if (audioEl.paused || audioEl.ended) {
     audioEl.play();
+    playBtn.style.display = "none";
+    pauseBtn.style.display = "inline-block";
   } else {
-    play.style.display = "block";
-    pause.style.display = "none";
     audioEl.pause();
+    playBtn.style.display = "inline-block";
+    pauseBtn.style.display = "none";
   }
 };
+
 
 window.rewind = function () {
   audioEl.currentTime = Math.max(0, audioEl.currentTime - 10);
@@ -117,3 +129,4 @@ window.rewind = function () {
 window.forward = function () {
   audioEl.currentTime = Math.min(audioEl.duration, audioEl.currentTime + 10);
 };
+

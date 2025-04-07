@@ -1,5 +1,5 @@
 const gameData = {
-  finalAudio: "./audio/audio1.mp3",
+  finalAudio: "./audio/complete-story/Prologue-Complete.mp3",
   chapters: {
     "1000": {
       id: "1000",
