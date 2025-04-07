@@ -85,7 +85,7 @@ function displayCard(imgSrc, title) {
 // Logic
 if (gameData.chapters[code]) {
   const chapter = gameData.chapters[code];
-  audioEl.src = chapter.audio;
+  audioEl.src = chapter.clueAudio;
   displayCard(chapter.image, chapter.name);
 } else if (gameData.cards[code]) {
   const card = gameData.cards[code];
