@@ -6,24 +6,35 @@ const errorSpan = document.getElementById("chapterError");
 
 // Function to validate the chapter code entered by the player
 function validateChapter() {
-  const chapterCode = chapterInput.value.trim(); 
-  const chapter = gameData.chapters[chapterCode]; 
+  const chapterCode = chapterInput.value.trim();
+  const chapter = gameData.chapters[chapterCode];
 
-  // If the input is empty, show an error message
+  // If the input is empty
   if (chapterCode === "") {
     errorSpan.textContent = "Kindly input a code.";
     return;
   }
 
   if (chapter) {
-    // If the chapter exists, store it in session and move to solve page
+    // If Chapter 3 is selected, check if Chapters 1 and 2 are solved
+    if (chapterCode === "3000") {
+      const solved1 = sessionStorage.getItem("solved_1000") === "true";
+      const solved2 = sessionStorage.getItem("solved_2000") === "true";
+
+      if (!solved1 || !solved2) {
+        errorSpan.textContent = "You must solve Chapter 1 and Chapter 2 first.";
+        return;
+      }
+    }
+
+    // If valid and passed, store in session and proceed
     sessionStorage.setItem("currentChapter", chapterCode);
     window.location.href = "solve-chapter.html";
   } else {
-    // Show error if the code is invalid
     errorSpan.textContent = "Invalid chapter code. Try again.";
   }
 }
+
 
 // Make the validateChapter function available globally on the home page
 if (chapterInput && errorSpan) {
