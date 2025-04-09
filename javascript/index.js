@@ -17,9 +17,9 @@ function validateChapter() {
 
   if (chapter) {
     // If Chapter 3 is selected, check if Chapters 1 and 2 are solved
-    if (chapterCode === "3000") {
-      const solved1 = sessionStorage.getItem("solved_1000") === "true";
-      const solved2 = sessionStorage.getItem("solved_2000") === "true";
+    if (chapterCode === "4682") {
+      const solved1 = sessionStorage.getItem("solved_3841") === "true";
+      const solved2 = sessionStorage.getItem("solved_5916") === "true";
 
       if (!solved1 || !solved2) {
         errorSpan.textContent = "You must solve Chapter 1 and Chapter 2 first.";
@@ -211,10 +211,23 @@ if (audioEl && audioGrid) {
   };
 
   // Logic for audio progress bar!
+  const progressBar = document.getElementById("progressBar");
+  const continueBtn = document.getElementById("continue");
 
+  audioEl.addEventListener("timeupdate", ()=>{
+    const percent = (audioEl.currentTime / audioEl.duration) * 100;
+    progressBar.style.width = `${percent}%`;
+
+    if(audioEl.duration - audioEl.currentTime <= 5){
+      continueBtn.classList.add("glow");
+    }else{
+      continueBtn.classList.remove("glow");
+    }
+  });
+  
   // Logic to go back to home or proceed to final story
   window.handleContinue = function () {
-    const solvedChapters = ["1000", "2000", "3000"].filter(chap =>
+    const solvedChapters = ["3841", "5916", "4682"].filter(chap =>
       sessionStorage.getItem(`solved_${chap}`) === "true"
     );
 
@@ -237,7 +250,7 @@ if (storyInput) {
   const feedback = document.getElementById("storyFeedback");
 
   const solvedAllChapters = () =>
-    ["1000", "2000", "3000"].every(ch => sessionStorage.getItem(`solved_${ch}`) === "true");
+    ["3841", "5916", "4682"].every(ch => sessionStorage.getItem(`solved_${ch}`) === "true");
 
   if (!solvedAllChapters()) {
     feedback.textContent = "You must solve all 3 chapters before unlocking the full story.";
@@ -294,7 +307,7 @@ if (storyInput) {
     }
   
     // Check for correct chapter set
-    const requiredOrder = ["1000", "2000", "3000"];
+    const requiredOrder = ["3841", "5916", "4682"];
     const allChaptersIncluded = requiredOrder.every(ch => codes.includes(ch));
   
     if (codes.join() === requiredOrder.join()) {
@@ -375,10 +388,24 @@ if (finalAudio && finalCardsContainer) {
     finalAudio.currentTime = Math.min(finalAudio.duration, finalAudio.currentTime + 10);
   };
   // Logic for audio progress bar
+  const progressBar = document.getElementById("progressBar");
+  const continueBtn = document.getElementById("finish");
 
-  // Restart game
+  finalAudio.addEventListener("timeupdate", ()=>{
+    const percent = (finalAudio.currentTime / finalAudio.duration) * 100;
+    progressBar.style.width = `${percent}%`;
+
+    if(finalAudio.duration - finalAudio.currentTime <= 5){
+      continueBtn.classList.add("glow");
+    }else{
+      continueBtn.classList.remove("glow");
+    }
+  });
+
+ 
+}
+ // Restart game
   window.restartGame = function () {
     sessionStorage.clear();
     window.location.href = "home.html";
   };
-}

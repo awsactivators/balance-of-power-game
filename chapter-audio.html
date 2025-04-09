@@ -30,11 +30,14 @@
       <button onclick="forward()" class="control-btns" id="forward"><i class="fa-solid fa-rotate-right"></i>10</button>
     </div>
     <!-- Add the audio progress bar here! -->
-    
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+     </div> 
+
 
       <div class="continue-container">
         <div class="continue-btn">CONTINUE</div>
-        <button class="continue-button" onclick="handleContinue()">
+        <button class="continue-button" id="continue" onclick="handleContinue()">
           <i class="fa-solid fa-forward-step"></i>
         </button>
       </div>

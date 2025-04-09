@@ -34,12 +34,18 @@
 
     <audio id="finalAudio"></audio>
     <!-- Progress bar below -->
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+     </div> 
 
       <div class="continue-container">
-        <div class="continue-btn">RESTART SOLUTION</div>
-        <button class="continue-button" onclick="restartGame()">
-          <i class="fa-solid fa-arrows-rotate"></i> 
-        </button>
+        
+        <div class="continue-btn">FINISH</div>
+        <a href="./credits.html">
+          <button class="continue-button" id="finish">
+            <i class="fa-solid fa-check"></i>
+          </button>
+        </a>
       </div>
   
   </div>

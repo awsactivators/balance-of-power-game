@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./css/solution.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Javascript -->
+  <!-- <script src="./javascript/gameData.js"></script> -->
+  <script src="./javascript/index.js" defer></script>
+
+  <title>Balance of Power - Story Solved</title>
+</head>
+<body>
+  <div class="container instructions">
+    <h1>How to Play</h1>
+    
+    <div class="team">
+       <ol>
+        <li>Separate <strong>Chapter 1</strong> and <strong>Chapter 2</strong> cards (black background)  from <strong>Chapter 3</strong> cards (brown background) . <strong>DO NOT OPEN Chapter 3</strong> cards yet.</li>
+        <li>Divide the cards by clue fragment cards <span class="color-yellow">(yellow backgrounds)</span> and chapter cards <span class="color-blue">(blue border)</span>.</li>
+        <li>Scan the QR codes on each card to listen to the sounds and dialogue clues.</li>
+        <li>Piece together the audio clues and solve them by chapter.</li>
+       </ol>
+    </div>
+
+    <div class="team">
+        <h2 id="">To solve a chapter:</h2>
+       <ul>
+        <li>From the <strong>SOLVE CHAPTER</strong> page, enter the <strong>4-digit code</strong> (bottom right of each card) of the chapter you wish to solve.</li>
+        <li>Then enter the 4-digit codes for each clue cards, in the order you that wish.</li>
+        <li>Once you solve <strong>Chapter 1 and Chapter 2</strong>, you can gain access to <strong>Chapter 3</strong> cards.</li>
+       </ul>
+    </div>
+
+    <div class="team">
+        <h2 id="">To solve the full story:</h2>
+       <ul>
+        <li>Once all the chapters have been solved, you may enter the <strong>SOLVE STORY</strong> page. </li>
+        <li>Enter the 4-digit codes of each chapter in the order that you wish.</li>
+        <li><span class="story-note">YOU NEED TO SOLVE ALL THE CHAPTERS</span> before you can attempt solving the story.</li>
+       </ul>
+    </div>
+
+    <div class="continue-container">
+        <div class="continue-btn">START GAME</div>
+        <button class="continue-button" onclick="restartGame()">
+          <i class="fa-solid fa-play"></i> 
+        </button>
+    </div>
+    
+  
+  </div>
+</body>
+</html>
