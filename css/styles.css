@@ -288,6 +288,7 @@ p {
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     overflow: hidden;
+    padding-top: 180px;
 }
   
 .frame-parent {
@@ -297,6 +298,10 @@ p {
     align-items: center;
 }
   
+.frame-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .intro-image-parent {
     display: flex;
     flex-direction: column;

@@ -403,29 +403,35 @@ button:hover {
   color: #333 !important;
 }
 
+
 /* Credits */
 .credit, .instructions{
-  box-shadow: 0 0 3px black;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 8px;
 }
+
 .credit h1, .team{
   padding-bottom: 15px;
-
 }
+
 
 /* Instructions */
 .instructions{
-text-align:left;
-
+  text-align:left;
 }
+
 .team{
   color:#CCCCBB;
 }
+
 .color-yellow{
   color:#E7CB6F;
 }
+
 .color-blue{
   color:#5DCDD3;
 }
+
 .story-note{
   color:#C94A36;
 }
