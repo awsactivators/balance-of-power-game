@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    
+    <script src="./javascript/camera.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript" defer></script>
+    <title>Play Area</title>
+</head>
+
+<body>
+
+    <section class="play-area-frame">
+        <h1 class="title">BALANCE OF POWER</h1>
+
+        <div class="actions">
+            <div class="action-item">
+                <p>Click here to discover a clue:</p>
+                <button class="btn btn-blue" onclick="startScanner()">SCAN CARD TO LISTEN</button>
+            </div>
+            
+            <div id="scanner"></div>
+            <button id="closeScanner" onclick="stopScanner()" style="display: none; position: fixed; top: 10px; right: 10px; z-index: 10000;">Close</button>
+
+            
+            <div class="action-item">
+                <p>Click here to solve a chapter:</p>
+                <a href="./solution.html">
+                    <button id="startCamera" class="btn btn-orange" >SOLVE CHAPTER</button>
+                </a>
+            </div>
+            
+
+            <div class="action-item">
+                <p>Click here to solve the whole story:</p>
+                <a href="./solve-story.html">
+                    <button class="btn btn-green">SOLVE STORY</button>
+                </a>
+            </div>
+
+            <div class="action-item">
+                <p>Click here to view instructions:</p>
+                <a href="./instructions.html"></a>
+                    <button class="btn btn-green">INSTRUCTIONS</button>
+                </a>
+            </div>
+
+            <div class="action-item">
+                <p>Click here to listen to the cover story:</p>
+                <a href="./index.html">
+                    <button class="btn btn-green">COVER STORY</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

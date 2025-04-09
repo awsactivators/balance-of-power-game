@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./css/solution.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Javascript -->
+  <script src="./javascript/gameData.js"></script>
+  <script src="./javascript/index.js" defer></script>
+
+  <title>Balance of Power - Full Chapter Audio</title>
+</head>
+<body>
+  <div class="container">
+    <h2 id="audioTitle">Full Audio: CHAPTER</h2>
+
+    <div class="card-grid" id="cardGrid">
+      <div id="chapterImageContainer" class="card"></div>
+      <!-- Cards will go here -->
+    </div>
+
+    <p id="audioPrompt">Congratulations, you found all the clues. Listen to the full chapter, continue when ready.</p>
+
+    <div class="audio-controls">
+      <button onclick="rewind()" class="control-btns" id="rewind"><i class="fa-solid fa-rotate-left"></i>10</button>
+      <button onclick="togglePlay()" id="play" class="control-btns play-pause"><i class="fa-solid fa-play"></i></button>
+      <button onclick="togglePlay()" style="display: none;" id="pause" class="control-btns play-pause"><i class="fa-solid fa-pause"></i></button>
+      <button onclick="forward()" class="control-btns" id="forward"><i class="fa-solid fa-rotate-right"></i>10</button>
+    </div>
+    <!-- Add the audio progress bar here! -->
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+     </div> 
+
+
+      <div class="continue-container">
+        <div class="continue-btn">CONTINUE</div>
+        <button class="continue-button" id="continue" onclick="handleContinue()">
+          <i class="fa-solid fa-forward-step"></i>
+        </button>
+      </div>
+
+      <!-- <a href="./index.html" class="home-btn">BACK TO HOME</a> -->
+
+    <audio id="chapterAudio"></audio>
+  </div>
+
+</body>
+</html>
