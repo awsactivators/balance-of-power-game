@@ -114,13 +114,6 @@ body {
   word-spacing:3px;
 }
 
-/* .container p {
-  color: #CCCCBB;
-  font-size: 1.2em;
-  margin-bottom: 1em;
-  line-height: 1.4;
-} */
-
 input#chapterInput {
   width: 100%;
   padding: 1em;
@@ -330,7 +323,6 @@ h2#audioTitle {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 
@@ -339,7 +331,7 @@ h2#audioTitle {
   border-radius: 12px;
   border-radius: 12px;
   display: block;
-  border: 5px solid #BF5525;
+  border: 10px solid #779f98;
 }
 
 .container p {
