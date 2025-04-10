@@ -160,7 +160,7 @@ h2#audioTitle {
 #audioPrompt {
   margin: 1em auto;
   color: #E7996F;
-  font-size: 1em;
+  font-size: 1.5em;
   line-height: 1.5;
 }
 
@@ -245,12 +245,13 @@ h2#audioTitle {
   align-items: center;
   margin-top: 2em;
   gap: 15px;
+  margin-bottom: 10px;
 }
 
 .continue-btn {
   margin: 0;
   color: #CCCCBB;
-  font-size: 12px;
+  font-size: 19px;
 }
 
 .continue-button {
@@ -426,6 +427,10 @@ button:hover {
 
 .story-note{
   color:#C94A36;
+}
+
+.instructions-continue {
+  margin-bottom: 20px;
 }
 
 

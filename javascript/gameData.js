@@ -1,30 +1,30 @@
 const gameData = {
-  finalAudio: "./audio/complete-story/Prologue-Complete.mp3",
+  finalAudio: "./audio/clue-cards/ACT3-Chapter-Card-The-Plane-Solution.mp3",
   chapters: {
     "3841": {
       id: "3841",
-      title: "Chapter One",
+      title: "ACT One",
       name: "Jumpsuit",
       clueAudio: "./audio/clue-cards/ACT1-Chapter-Card-Ricks-Jumpsuit.mp3",
-      audio: "./audio/complete-story/Act1-Complete.mp3",
+      audio: "./audio/clue-cards/ACT1-Chapter-Card-Ricks-Jumpsuit-Solution.mp3",
       image: "./images/ch1-3841-uniform-navy-pilot.jpg",
       cards: ["7295", "1603", "8472"]
     },
     "5916": {
       id: "5916",
-      title: "Chapter Two",
+      title: "ACT Two",
       name: "Man in Tree",
       clueAudio: "./audio/clue-cards/ACT2-Chapter-Card-Man-in-Tree.mp3",
-      audio: "./audio/complete-story/Act2-Complete.mp3",
+      audio: "./audio/clue-cards/ACT2-Chapter-Card-Man-in-Tree-Solution.mp3",
       image: "./images/ch2-5916-suit-man-parachute.jpg",
       cards: ["6749", "2038", "9150"]
     },
     "4682": {
       id: "4682",
-      title: "Chapter Three",
+      title: "ACT Three",
       name: "The Plane",
       clueAudio: "./audio/clue-cards/ACT3-Chapter-Card-The-Plane.mp3",
-      audio: "./audio/complete-story/Act3-Complete.mp3",
+      audio: "./audio/clue-cards/ACT3-Chapter-Card-The-Plane-Solution.mp3",
       image: "./images/ch3-4682-plane-on-rock.jpg",
       cards: ["7314", "0527", "3960"]
     }
