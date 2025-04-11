@@ -5,8 +5,17 @@ function startScanner() {
     const html5QrCode = new Html5Qrcode("scanner");
 
     html5QrCode.start(
-        { facingMode: "environment" },
-        { fps: 10, qrbox: 250 },
+        { facingMode: "environment" }, 
+        {
+          fps: 10,
+          qrbox: 250,
+          videoConstraints: {
+            facingMode: "environment", 
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+            advanced: [{ focusMode: "continuous" }]
+          }
+        },
         qrCodeMessage => {
             html5QrCode.stop().then(() => {
                 window.location.href = qrCodeMessage;

@@ -170,6 +170,18 @@ p {
     box-shadow: 0px 0px 5px #848e51;
 }
 
+.instruction-btn {
+    background-color: #CCCCBB;
+    color: black;
+    box-shadow: 0px 0px 5px #848e51;
+}
+
+.cover-btn {
+    background-color: #5a220c;
+    color: #CCCCBB;
+    box-shadow: 0px 0px 5px #431402;
+}
+
 
 
 /* Actions */
@@ -259,12 +271,22 @@ p {
 .control-btns:hover {
     background: #3C2F2A;
     color: whitesmoke;
+}
 
+.play-pause i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+    vertical-align: middle;
 }
 
 .play-pause {
     background-color: #858E51;
     border: 2px solid #CCCCBB;
+    text-align: center;
 }
 
 .play-pause:hover {

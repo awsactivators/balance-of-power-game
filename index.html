@@ -1,60 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./css/solution.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Javascript -->
-    <script src="./javascript/gameData.js"></script>
-    <script src="./javascript/audio.js" defer></script>
-    <title>Document</title>
+  <!-- Javascript -->
+  <!-- <script src="./javascript/gameData.js"></script> -->
+  <script src="./javascript/index.js" defer></script>
+
+  <title>Balance of Power - Story Solved</title>
 </head>
-
 <body>
-    <div class="story-cover">
-        <!-- <div class="story-cover-child"></div> -->
-        <div class="frame-parent">
-            <div class="frame-group">
-                <!-- Intro Image and Text Content -->
-                <div class="intro-image-parent">
-                    <h1>Balance of Power: Prologue</h1>
-                  
-                  <img class="image" alt="Introduction Image" src="./images/Balance-of-Power-Cover.jpg">
-                  
-                  <div class="container">
-                    <p>Set during the height of the Cold War. A US Airman and spy wakes up with amnesia on a deserted Island in the Caribbean between Cuba and Florida after a plane crash. By picking up the items scattered across the island, he starts to remember what brought him there... It's a story of double agents and shifting loyalties.</p>
-                  </div>
+  <div class="container instructions">
+    <h1>How to Play</h1>
 
-                  <audio id="coverAudio">
-                    <source src="./audio/complete-story/Prologue-Complete.mp3" type="audio/mpeg">
-                  </audio>
-                  
-
-                  <div class="audio-controls">
-                    <button onclick="rewind()" class="control-btns" id="rewind"><i class="fa-solid fa-rotate-left"></i>10</button>
-                    <button onclick="togglePlay()" id="play" class="control-btns play-pause"><i class="fa-solid fa-play"></i></button>
-                    <button onclick="togglePlay()" style="display: none;" id="pause" class="control-btns play-pause"><i class="fa-solid fa-pause"></i></button>
-                    <button onclick="forward()" class="control-btns" id="forward"><i class="fa-solid fa-rotate-right"></i>10</button>
-                  </div>
-                  
-                  <div class="continue-container">
-                    <div class="continue-btn">CONTINUE</div>
-                    <a href="./instructions.html">
-                      <button class="continue-button"><i class="fa-solid fa-forward-step"></i>
-                      </button>
-                    </a>
-                  </div>
-                </div>
-
-            </div>
-        </div>
+    <!-- Download button -->
+    <div class="download-section">
+      <p>To begin, please download the soft copy of the game cards from the link below.</p>
+      <a href="https://drive.google.com/drive/folders/1nYr5LffyV6Mp8g6esrk53YLHTaBvTfaw?usp=sharing" target="_blank" class="download-btn">Download Game Cards</a>
     </div>
 
-   
+    <!-- Scrollable Instructions Box -->
+    <div class="instructions-scrollable">
+
+      <h2>Overview</h2>
+      <p><strong>Balance of Power</strong> is an interactive audio mystery game based on Cold War themes. You will use 12 unique cards to scan, listen, and solve the story. Each card has:</p>
+      <ul>
+        <li>An image to help visualize the clue</li>
+        <li>A QR code for scanning and playing the audio clue</li>
+        <li>A 4-digit code used to solve chapters and the full story</li>
+      </ul>
+
+      <h2>Game Structure</h2>
+      <p>The game consists of three main chapter cards: <strong>Act 1</strong>, <strong>Act 2</strong>, and <strong>Act 3</strong>. Each chapter leads you to discover 3 specific clue fragment cards. Solve the correct chapter with the correct clues in the right order to unlock the full audio experience for that chapter.</p>
+
+      <h3>Cards Breakdown</h3>
+      <ul>
+        <li><strong>3 Chapter Cards</strong>: Act 1, Act 2, Act 3</li>
+        <li><strong>9 Fragment Cards</strong>: 3 for each chapter</li>
+        <li><span class="note">Act 3 cannot be solved until Acts 1 and 2 are successfully completed.</span></li>
+      </ul>
+
+      <h2>Home Page Buttons Explained</h2>
+      <ul>
+        <li><strong>Scan Card</strong>: Scan the QR code on any card to hear its audio clue.</li>
+        <li><strong>Solve Chapter</strong>: Enter a chapter code and its 3 fragment codes to solve a chapter.</li>
+        <li><strong>Solve Story</strong>: Once all chapters are solved, enter their codes to unlock the full Cold War storyline.</li>
+        <li><strong>Instructions</strong>: You're here!</li>
+        <li><strong>Cover Story</strong>: Listen to the prologue to immerse yourself before starting.</li>
+      </ul>
+
+      <h2>How to Solve a Chapter</h2>
+      <ol>
+        <li>Go to the <strong>SOLVE CHAPTER</strong> page.</li>
+        <li>Enter the <strong>4-digit chapter code</strong>.</li>
+        <li>If the code doesn’t exist, an error message will appear.</li>
+        <li>If you try to solve Act 3 without solving Act 1 and 2 first, you will be blocked.</li>
+        <li>Enter the <strong>4-digit fragment card codes</strong> you think belong to that chapter.</li>
+        <li>If:
+          <ul>
+            <li>A code doesn’t exist error: "Invalid code".</li>
+            <li>All cards are correct but not in order error: "Incorrect order".</li>
+            <li>Some or all don’t belong to the chapter error: "Card(s) not valid for this chapter".</li>
+            <li>All are correct and in order; success: chapter solved and audio unlocked.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>How to Solve the Story</h2>
+      <ol>
+        <li>Navigate to the <strong>SOLVE STORY</strong> page.</li>
+        <li>The input field will be disabled until all three chapters are solved.</li>
+        <li>Once unlocked, enter the chapter codes for Acts 1, 2, and 3 in order.</li>
+        <li>If any code is invalid or incorrect, error messages will display.</li>
+        <li>When all codes are valid and in correct order, the full story will be revealed in audio format.</li>
+      </ol>
+
+      <h2>Ready to Begin?</h2>
+      <p>Start by downloading the cards, listening to the cover story, and then return to the Home page to begin playing.</p>
+
     </div>
+
+    <!-- Continue Button -->
+    <div class="continue-container instructions-continue">
+      <div class="continue-btn">Continue to Cover Story</div>
+      <a href="./cover-story.html">
+        <button class="continue-button"><i class="fa-solid fa-forward-step"></i>
+        </button>
+      </a>
+    </div>
+  </div>
 </body>
-
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Javascript -->
+    <script src="./javascript/gameData.js"></script>
+    <script src="./javascript/audio.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="story-cover">
+        <!-- <div class="story-cover-child"></div> -->
+        <div class="frame-parent">
+            <div class="frame-group">
+                <!-- Intro Image and Text Content -->
+                <div class="intro-image-parent">
+                    <h1>Balance of Power: Prologue</h1>
+                  
+                  <img class="image" alt="Introduction Image" src="./images/Balance-of-Power-Cover.jpg">
+                  
+                  <div class="container">
+                    <p>Set during the height of the Cold War. A US Airman and spy wakes up with amnesia on a deserted Island in the Caribbean between Cuba and Florida after a plane crash. By picking up the items scattered across the island, he starts to remember what brought him there... It's a story of double agents and shifting loyalties.</p>
+                  </div>
+
+                  <audio id="coverAudio">
+                    <source src="./audio/complete-story/Prologue-Complete.mp3" type="audio/mpeg">
+                  </audio>
+                  
+
+                  <div class="audio-controls">
+                    <button onclick="rewind()" class="control-btns" id="rewind"><i class="fa-solid fa-rotate-left"></i>10</button>
+                    <button onclick="togglePlay()" id="play" class="control-btns play-pause"><i class="fa-solid fa-play"></i></button>
+                    <button onclick="togglePlay()" style="display: none;" id="pause" class="control-btns play-pause"><i class="fa-solid fa-pause"></i></button>
+                    <button onclick="forward()" class="control-btns" id="forward"><i class="fa-solid fa-rotate-right"></i>10</button>
+                  </div>
+                  
+                  <div class="continue-container">
+                    <div class="continue-btn">CONTINUE</div>
+                    <a href="./home.html">
+                      <button class="continue-button"><i class="fa-solid fa-forward-step"></i>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+   
+    </div>
+</body>
+
+</html>
