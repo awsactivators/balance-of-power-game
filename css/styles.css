@@ -308,6 +308,7 @@ p {
     align-items: center;
     margin-top: 2em;
     gap: 15px;
+    align-self: flex-end;
 }
 
 
@@ -369,6 +370,7 @@ p {
     align-items: center;
     margin-top: 2em;
     gap: 15px;
+    align-self: flex-end;
 }
 
 .continue-btn {
